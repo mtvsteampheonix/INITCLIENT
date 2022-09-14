@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# IN IT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+IT 인력 채용 서비스 “IN IT”은 **IT 인력의 채용을 돕는 서비스**로, 인재 채용을 원하는 IT 기업들과 IT 인력들의 채용 과정을 지원해주는 서비스입니다.
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+코로나 19 이후, 산업 전반이 비대면으로 전환되면서, 인력 채용 과정 역시 Untact를 중심으로 변화하고 있습니다. 엔데믹 시대로 접어들고 있지만, 산업 전반에는 효율적인 채용 과정을 이유로 **온라인 채용 프로세스에 대한 수요**가 늘어나고 있습니다.
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+IT 산업의 성장으로, IT 인재에 대한 **수요는 천정부지**로 치솟고 있습니다. 그러나 그에 비해 **공급은 턱 없이 부족**합니다.  그러나 아무리 공급이 적어도, IT 기업은 실력있는 IT 인재들을 뽑고 싶어 합니다. 또한 구직자들 역시 자신의 적성을 발휘하기에 알맞은 IT 기업에 취업하고자 합니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br>
 
-### `npm test`
+**IN IT**은 IT 기업들과 구직자들을 대상으로 **IT 채용 프로세스를 효율적으로 돕습니다.** 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br> 
 
-### `npm run build`
+실력있는 IT 인재 채용이라는 목표 아래 기업 및 **개인 회원 정보 관리, 지원자 포트폴리오 및 이력서 작성 가이드 지원, 기업 채용 공고, IT 인력풀 조회, 기업-구직자 매칭 서비스**를 제공합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## MTVS Inner Project Phoenix
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `npm run eject`
+All rights reserved.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
