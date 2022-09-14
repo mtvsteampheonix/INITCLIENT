@@ -6,5 +6,6 @@
   "requirePragma": false,
   "semi": true,
   "singleQuote": true,
-  "trailingComma": "none"
+  "trailingComma": "none",
+  "jsxSingleQuote": true
 }
