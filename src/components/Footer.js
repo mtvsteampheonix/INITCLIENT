@@ -21,6 +21,8 @@ const StyledDetails = styled.div`
   align-items: flex-start;
   color: white;
   font-size: 1em;
+  overflow: hidden;
+  nowrap: none;
 `;
 
 const StyledA = styled.a`
