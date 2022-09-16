@@ -10,7 +10,9 @@ import {
   Grid,
   Link
 } from '@mui/material';
+
 import {Box, Container} from '@mui/system';
+
 function Login() {
   return (
     <>
@@ -26,7 +28,7 @@ function Login() {
         >
           <Avatar
             src='/logo.png'
-            sx={{m: 1, bgcolor: '#4199e1', borderRadius: '5px'}}
+            sx={{m: 1, borderRadius: '5px', backgroundColor: '#4199e1'}}
             variant='square'
           ></Avatar>
           <Typography component='h1' variant='h5'>
@@ -36,13 +38,10 @@ function Login() {
             variant='contained'
             aria-label='selectedMemberType'
             sx={{marginTop: 8}}
+            color='gray'
           >
-            <Button sx={{width: '200px', backgroundColor: '#A9A9A9'}}>
-              개인회원
-            </Button>
-            <Button sx={{width: '200px', backgroundColor: '#A9A9A9'}}>
-              기업회원
-            </Button>
+            <Button sx={{width: '200px'}}>개인회원</Button>
+            <Button sx={{width: '200px'}}>기업회원</Button>
           </ButtonGroup>
           <Box component='div' sx={{marginTop: 1}}>
             <TextField
@@ -72,7 +71,8 @@ function Login() {
               type='button'
               fullWidth
               variant='contained'
-              sx={{marginTop: 3, marginBottom: 2, backgroundColor: '#4199e1'}}
+              color='primary'
+              sx={{marginTop: 3, marginBottom: 2}}
             >
               로그인
             </Button>
