@@ -9,8 +9,8 @@ const StyledFooter = styled.footer`
   align-items: center;
   background: #4199e1;
   height: 400px;
-  width: 1920px;
-  min-width: 1200px;
+  width: 100%;
+  min-width: 800px;
 `;
 
 const StyledDetails = styled.div`

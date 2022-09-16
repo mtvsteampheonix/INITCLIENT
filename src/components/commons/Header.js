@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import logo from '../../design/images/Logo.png';
+// import logo from '../../design/images/Logo.png';
 import Button from '@mui/material/Button';
 
 const StyledHeader = styled.div`
@@ -8,7 +8,8 @@ const StyledHeader = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 1920px;
+  width: 100%;
+  min-width: 800px;
   height: 82px;
 `;
 const HeaderFrame = styled.div`
@@ -122,9 +123,8 @@ const LoginMemberText = styled.div`
 `;
 
 function Header() {
-  const authenticated = true;
-
-  const memberStatus = 'company';
+  const authenticated = false;
+  const memberStatus = 'member';
 
   const InnerHeaderCorComponent = () => {
     return (
@@ -152,10 +152,13 @@ function Header() {
           <InnerHeaderFrame>채용공고</InnerHeaderFrame>
         </Link>
         <Link to='/' style={{textDecoration: 'none'}}>
-          <InnerHeaderFrame>상품</InnerHeaderFrame>
+          <InnerHeaderFrame>기업조회</InnerHeaderFrame>
         </Link>
         <Link to='/' style={{textDecoration: 'none'}}>
-          <InnerHeaderFrame>인재풀조회</InnerHeaderFrame>
+          <InnerHeaderFrame>커리어</InnerHeaderFrame>
+        </Link>
+        <Link to='/' style={{textDecoration: 'none'}}>
+          <InnerHeaderFrame>프로필관리</InnerHeaderFrame>
         </Link>
         <Link to='/' style={{textDecoration: 'none'}}>
           <InnerHeaderFrame>마이페이지</InnerHeaderFrame>
@@ -171,7 +174,7 @@ function Header() {
           <LogoGroup>
             <Link to='/' style={{textDecoration: 'none'}}>
               <LogoImg>
-                <LogoContainer src={logo} />
+                <LogoContainer src='Logo.png' />
               </LogoImg>
             </Link>
             <Link to='/' style={{textDecoration: 'none'}}>
