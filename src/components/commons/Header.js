@@ -174,7 +174,7 @@ function Header() {
           <LogoGroup>
             <Link to='/' style={{textDecoration: 'none'}}>
               <LogoImg>
-                <LogoContainer src='Logo.png' />
+                <LogoContainer src='/Logo.png' />
               </LogoImg>
             </Link>
             <Link to='/' style={{textDecoration: 'none'}}>
