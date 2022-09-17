@@ -87,7 +87,13 @@ function InputForm() {
           <hr />
         </Grid>
         <Grid item xs={12}>
-          <Button variant='contained' fullWidth sx={{height: '100px'}}>
+          <Button
+            component={Link}
+            to='/member/regist/success'
+            variant='contained'
+            fullWidth
+            sx={{height: '100px'}}
+          >
             가입하기
           </Button>
         </Grid>
