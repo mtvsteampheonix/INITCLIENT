@@ -2,14 +2,9 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './App.css';
 import Main from './pages/Main';
 import Layout from './layouts/Layout';
-import {Manage} from './pages/resume/manage';
-import {AddStepCategory} from './pages/resume/add-step';
-import Login from './pages/members/Login';
 import JobSearch from './pages/jobSearch/JobSearch';
-import AgreeTerms from './pages/members/regist/AgreeTerms';
-import InputForm from './pages/members/regist/InputForm';
-import RegistSuccess from './pages/members/regist/RegistSuccess';
 import Member from './routes/member/Member';
+import Resume from './routes/resume/Resume';
 
 function App() {
   return (
@@ -19,12 +14,9 @@ function App() {
           <Route path='/' element={<Layout />}>
             <Route index element={<Main />} />
 
-            <Route path='resume'>
-              <Route index element={<Manage />} />
-              <Route path='add/step1' element={<AddStepCategory />} />
-            </Route>
+            <Route path='resume/*' element={<Resume />} />
 
-            <Route path='member/*' element={<Member />}></Route>
+            <Route path='member/*' element={<Member />} />
 
             <Route path='jobsearch'>
               <Route index element={<JobSearch />} />
