@@ -9,6 +9,7 @@ import JobSearch from './pages/jobSearch/JobSearch';
 import AgreeTerms from './pages/members/regist/AgreeTerms';
 import InputForm from './pages/members/regist/InputForm';
 import RegistSuccess from './pages/members/regist/RegistSuccess';
+import Member from './routes/member/Member';
 
 function App() {
   return (
@@ -23,14 +24,7 @@ function App() {
               <Route path='add/step1' element={<AddStepCategory />} />
             </Route>
 
-            <Route path='member'>
-              <Route path='login' element={<Login />} />
-              <Route path='regist'>
-                <Route path='agree-terms' element={<AgreeTerms />} />
-                <Route path='input' element={<InputForm />} />
-                <Route path='success' element={<RegistSuccess />} />
-              </Route>
-            </Route>
+            <Route path='member/*' element={<Member />}></Route>
 
             <Route path='jobsearch'>
               <Route index element={<JobSearch />} />
