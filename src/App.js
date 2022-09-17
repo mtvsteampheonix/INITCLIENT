@@ -8,6 +8,7 @@ import Login from './pages/members/Login';
 import JobSearch from './pages/jobSearch/JobSearch';
 import AgreeTerms from './pages/members/regist/AgreeTerms';
 import InputForm from './pages/members/regist/InputForm';
+import RegistSuccess from './pages/members/regist/RegistSuccess';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path='regist'>
                 <Route path='agree-terms' element={<AgreeTerms />} />
                 <Route path='input' element={<InputForm />} />
+                <Route path='success' element={<RegistSuccess />} />
               </Route>
             </Route>
 
