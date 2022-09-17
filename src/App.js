@@ -23,7 +23,7 @@ function App() {
               <Route path='login' element={<Login />} />
               <Route path='regist'>
                 <Route path='agree-terms' element={<AgreeTerms />} />
-                <Route path='input-form' element={<InputForm />} />
+                <Route path='input' element={<InputForm />} />
               </Route>
             </Route>
           </Route>

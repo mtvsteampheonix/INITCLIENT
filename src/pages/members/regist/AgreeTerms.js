@@ -120,7 +120,7 @@ export default function AgreeTerms() {
           {isCheckedRequired() ? (
             <>
               <Link
-                href='./input-form'
+                href='./input'
                 sx={{
                   width: '100%',
                   height: '100%'
