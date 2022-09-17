@@ -9,7 +9,8 @@ const StyledFooter = styled.footer`
   align-items: center;
   background: #4199e1;
   height: 400px;
-  min-width: 1200px;
+  width: 100%;
+  min-width: 800px;
 `;
 
 const StyledDetails = styled.div`
@@ -18,9 +19,7 @@ const StyledDetails = styled.div`
   align-items: flex-start;
   color: white;
   font-size: 1em;
-  overflow: hidden;
-  nowrap: none;
-  width: 400px;
+  width: 300px;
 `;
 
 const StyledA = styled.a`
