@@ -2,7 +2,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './App.css';
 import Main from './pages/Main';
 import Layout from './layouts/Layout';
-import {Manage} from './pages/resume/Manage';
+import {Manage} from './pages/resume/manage';
 import {AddStepCategory} from './pages/resume/add-step';
 import Login from './pages/members/Login';
 import AgreeTerms from './pages/members/regist/AgreeTerms';
