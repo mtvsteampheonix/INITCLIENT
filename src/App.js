@@ -5,6 +5,7 @@ import Layout from './layouts/Layout';
 import ResumeRoute from './routes/ResumeRoute';
 import MemberRoute from './routes/MemberRoute';
 import JobsearchRoute from './routes/JobsearchRoute';
+import ProductRoute from './routes/ProductRoute';
 function App() {
   return (
     <div className='App'>
@@ -17,7 +18,9 @@ function App() {
 
             <Route path='member/*' element={<MemberRoute />} />
 
-            <Route path='jobsearch/*' element={<JobsearchRoute />}></Route>
+            <Route path='jobsearch/*' element={<JobsearchRoute />} />
+
+            <Route path='product/*' element={<ProductRoute />} />
           </Route>
         </Routes>
       </BrowserRouter>
