@@ -6,6 +6,7 @@ import {Manage} from './pages/resume/manage';
 import {AddStepCategory} from './pages/resume/add-step';
 import Login from './pages/members/Login';
 import AgreeTerms from './pages/members/regist/AgreeTerms';
+import InputForm from './pages/members/regist/InputForm';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path='login' element={<Login />} />
               <Route path='regist'>
                 <Route path='agree-terms' element={<AgreeTerms />} />
+                <Route path='input-form' element={<InputForm />} />
               </Route>
             </Route>
           </Route>

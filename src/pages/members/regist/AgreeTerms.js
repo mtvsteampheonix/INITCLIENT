@@ -10,6 +10,7 @@ import {
 import {Box} from '@mui/system';
 import {useDispatch, useSelector} from 'react-redux';
 import {SET_TERMSCHECKED} from '../../../modules/regist/termsModule';
+import Link from '@mui/material/Link';
 
 export default function AgreeTerms() {
   const termsState = useSelector((state) => state.termsReducer);
@@ -118,22 +119,40 @@ export default function AgreeTerms() {
         <Stack direction='row' spacing={5} height={70}>
           {isCheckedRequired() ? (
             <>
-              <Button
-                variant='contained'
+              <Link
+                href='./input-form'
                 sx={{
-                  width: '100%'
+                  width: '100%',
+                  height: '100%'
                 }}
               >
-                개인 회원
-              </Button>
-              <Button
-                variant='contained'
+                <Button
+                  variant='contained'
+                  sx={{
+                    width: '100%',
+                    height: '100%'
+                  }}
+                >
+                  개인 회원
+                </Button>
+              </Link>
+              <Link
+                // href='./input-form'
                 sx={{
-                  width: '100%'
+                  width: '100%',
+                  height: '100%'
                 }}
               >
-                기업 회원
-              </Button>
+                <Button
+                  variant='contained'
+                  sx={{
+                    width: '100%',
+                    height: '100%'
+                  }}
+                >
+                  기업 회원
+                </Button>
+              </Link>
             </>
           ) : (
             <>
