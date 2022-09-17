@@ -13,6 +13,7 @@ import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import Pagination from '@mui/material/Pagination';
 import Container from '@mui/material/Container';
+import {useNavigate} from 'react-router-dom';
 
 function createData(No, comName, title, interest) {
   return {No, comName, title, interest};
@@ -25,8 +26,12 @@ const rows = [
 ];
 
 export default function BasicTable() {
+  const navigate = useNavigate();
   const [interestState, setInterestState] = useState('N');
 
+  const toDetails = () => {
+    navigate('./details');
+  };
   return (
     <TableContainer component={Paper}>
       <Table sx={{minWidth: 650}} aria-label='simple table'>
@@ -50,7 +55,9 @@ export default function BasicTable() {
               <TableCell>{row.comName}</TableCell>
               <TableCell>{row.title}</TableCell>
               <TableCell>
-                <Button variant='contained'>지원신청</Button>
+                <Button variant='contained' onClick={toDetails}>
+                  지원하기
+                </Button>
                 <IconButton color='success'>
                   {row.interest == 'N' ? <StarBorderIcon /> : <StarIcon />}
                 </IconButton>

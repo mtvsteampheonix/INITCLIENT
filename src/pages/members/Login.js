@@ -81,7 +81,7 @@ function Login() {
                 <Link>비밀번호 찾기</Link>
               </Grid>
               <Grid item>
-                <Link>회원가입</Link>
+                <Link href='regist/agree-terms'>회원가입</Link>
               </Grid>
             </Grid>
             <img src='/titleLogo.svg' alt='titleLogoImg'></img>

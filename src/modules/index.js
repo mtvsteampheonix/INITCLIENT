@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import tempReducer from './TempModule';
+import termsReducer from './regist/termsModule';
 
 const rootReducer = combineReducers({
-  tempReducer
+  termsReducer
 });
 
 export default rootReducer;
