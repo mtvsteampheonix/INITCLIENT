@@ -4,7 +4,8 @@ import {
   FormControlLabel,
   Typography,
   Button,
-  Stack
+  Stack,
+  Grid
 } from '@mui/material';
 import {Box} from '@mui/system';
 import {useDispatch, useSelector} from 'react-redux';
@@ -43,7 +44,7 @@ export default function AgreeTerms() {
   };
 
   const childrenCheckBox = (
-    <Box sx={{display: 'flex', flexDirection: 'column', ml: 3}}>
+    <Grid item paddingLeft={2}>
       <FormControlLabel
         label='이용약관 동의 (필수)'
         control={
@@ -54,7 +55,9 @@ export default function AgreeTerms() {
           />
         }
       />
-      <Typography border='1px solid'>이용약관에 대한 내용</Typography>
+      <Typography height={100} border='1px solid gray' boxSizing='border-box'>
+        이용약관에 대한내용
+      </Typography>
       <FormControlLabel
         label='개인정보 수집 및 이용동의 (필수)'
         control={
@@ -65,7 +68,7 @@ export default function AgreeTerms() {
           />
         }
       />
-      <Typography border='1px solid'>
+      <Typography height={100} border='1px solid'>
         개인정보 수집 및 이용동의에 대한 내용
       </Typography>
       <FormControlLabel
@@ -78,11 +81,11 @@ export default function AgreeTerms() {
           />
         }
       />
-      <Typography border='1px solid'>
+      <Typography height={100} border='1px solid'>
         광고성 정보 수신 동의에 대한 내용 <br />
         내용을 작성해보자
       </Typography>
-    </Box>
+    </Grid>
   );
   return (
     <>
@@ -91,8 +94,9 @@ export default function AgreeTerms() {
         spacing={1}
         minWidth={800}
         margin='auto'
-        alignItems='center'
         paddingBottom={10}
+        width={1200}
+        alignContent='center'
       >
         <Box sx={{display: 'flex', justifyContent: 'center'}}>
           <img style={{width: '300px'}} src='/titleLogo.svg' alt='titleLogo' />
@@ -111,7 +115,7 @@ export default function AgreeTerms() {
           />
           {childrenCheckBox}
         </FormGroup>
-        <Stack direction='row' spacing={5} width={800} height={70}>
+        <Stack direction='row' spacing={5} height={70}>
           {isCheckedRequired() ? (
             <>
               <Button
