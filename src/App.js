@@ -5,6 +5,7 @@ import Layout from './layouts/Layout';
 import {Manage} from './pages/resume/Manage';
 import {AddStepCategory} from './pages/resume/add-step';
 import Login from './pages/members/Login';
+import AgreeTerms from './pages/members/regist/AgreeTerms';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path='member'>
               <Route path='login' element={<Login />} />
+              <Route path='regist'>
+                <Route path='agree-terms' element={<AgreeTerms />} />
+              </Route>
             </Route>
           </Route>
         </Routes>
