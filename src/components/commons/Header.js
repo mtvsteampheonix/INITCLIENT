@@ -174,7 +174,7 @@ function Header() {
           <LogoGroup>
             <Link to='/' style={{textDecoration: 'none'}}>
               <LogoImg>
-                <LogoContainer src='Logo.png' />
+                <LogoContainer src='/Logo.png' />
               </LogoImg>
             </Link>
             <Link to='/' style={{textDecoration: 'none'}}>
@@ -190,7 +190,9 @@ function Header() {
             어서오세요,<LoginMemberText>홍길동</LoginMemberText>님
           </LoginText>
         ) : (
-          <StyledButton>로그인</StyledButton>
+          <Link to='/member/login'>
+            <StyledButton>로그인</StyledButton>
+          </Link>
         )}
       </HeaderFrame>
     </StyledHeader>
