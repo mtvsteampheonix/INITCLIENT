@@ -3,7 +3,7 @@ import Error404 from './../pages/errors/Error404';
 export default function PolicyRoute() {
   return (
     <Routes>
-      <Route></Route>
+      {/* //이곳에 페이지 추가해주세요  */}
 
       <Route path='*' element={<Error404 />} />
     </Routes>

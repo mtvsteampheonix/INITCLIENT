@@ -8,6 +8,7 @@ export default function ResumeRoute() {
     <Routes>
       <Route index element={<Manage />} />
       <Route path='add/step1' element={<AddStepCategory />} />
+
       <Route path='*' element={<Error404 />} />
     </Routes>
   );
