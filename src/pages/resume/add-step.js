@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import Checkbox from '@mui/material/Checkbox';
+import Button from '@mui/material/Button';
+/* 파일명 수정 수정 */
 
 const OutletContainer = styled.div`
   display: flex;
@@ -10,6 +13,15 @@ const OutletContainer = styled.div`
 
   width: 100%;
   min-width: 1200px;
+`;
+
+const StyledButton = styled.button`
+  width: 123.29px;
+  height: 48px;
+  background: #4199e1;
+  border-radius: 5px;
+  color: white;
+  border-color: #4199e1;
 `;
 
 const AddMainContainer = styled.div`
@@ -30,7 +42,16 @@ const AddHeaderText = styled.div`
   font-family: 'Inder';
   font-style: normal;
   font-weight: 400;
-  font-size: 48px;
+  font-size: 36px;
+  line-height: 100%;
+`;
+
+const AddHeaderSelectText = styled.div`
+  width: 100%;
+  font-family: 'Inder';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
   line-height: 100%;
 `;
 
@@ -85,7 +106,7 @@ const SelectCategoryTextBoxBasix = styled.div`
   letter-spacing: 0.01em;
 `;
 
-const selectCategoryContentContainer = styled.div`
+const SelectCategoryContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,7 +118,7 @@ const selectCategoryContentContainer = styled.div`
   height: 74px;
 `;
 
-const selectCategoryContentContainerList = styled.div`
+const SelectCategoryContentContainerList = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -109,7 +130,7 @@ const selectCategoryContentContainerList = styled.div`
   height: 29px;
 `;
 
-const selectCategoryContentContainerCard = styled.div`
+const SelectCategoryContentContainerCard = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -122,7 +143,24 @@ const selectCategoryContentContainerCard = styled.div`
   height: 29px;
 `;
 
+const CardText = styled.div`
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: 0.01em;
+  height: 18px;
+  max-width: 200px;
+  width: 81%;
+`;
+
 export function AddStepCategory() {
+  const label = {inputProps: {'aria-label': 'checked'}};
   return (
     <OutletContainer>
       <AddMainContainer>
@@ -140,16 +178,49 @@ export function AddStepCategory() {
           </AddBoxText>
         </AddBox>
         <SelectCategoryTextBox>
-          <AddHeaderText>이력서 항목 선택</AddHeaderText>
+          <AddHeaderSelectText>이력서 항목 선택</AddHeaderSelectText>
           <SelectCategoryTextBoxBasix>
             인적 사항, 학력사항, 기술 스택, 희망 직군은 기본 입력 항목입니다.
           </SelectCategoryTextBoxBasix>
         </SelectCategoryTextBox>
-        <selectCategoryContentContainer>
-          <selectCategoryContentContainerList>
-            여기서부터
-          </selectCategoryContentContainerList>
-        </selectCategoryContentContainer>
+        {/* 이력서 항목 선택 */}
+        <SelectCategoryContentContainer>
+          <SelectCategoryContentContainerList>
+            <SelectCategoryContentContainerCard>
+              <Checkbox {...label} />
+              <CardText>경력사항</CardText>
+            </SelectCategoryContentContainerCard>
+
+            <SelectCategoryContentContainerCard>
+              <Checkbox {...label} />
+              <CardText>주요활동 및 수상경력</CardText>
+            </SelectCategoryContentContainerCard>
+
+            <SelectCategoryContentContainerCard>
+              <Checkbox {...label} />
+              <CardText>해외경험</CardText>
+            </SelectCategoryContentContainerCard>
+          </SelectCategoryContentContainerList>
+
+          <SelectCategoryContentContainerList>
+            <SelectCategoryContentContainerCard>
+              <Checkbox {...label} />
+              <CardText>외국어 능력</CardText>
+            </SelectCategoryContentContainerCard>
+
+            <SelectCategoryContentContainerCard>
+              <Checkbox {...label} />
+              <CardText>직업 훈련 이수 이력</CardText>
+            </SelectCategoryContentContainerCard>
+
+            <SelectCategoryContentContainerCard>
+              <Checkbox {...label} />
+              <CardText>보유 자격 면허</CardText>
+            </SelectCategoryContentContainerCard>
+          </SelectCategoryContentContainerList>
+        </SelectCategoryContentContainer>
+
+        <StyledButton>이력서 작성하기</StyledButton>
       </AddMainContainer>
     </OutletContainer>
   );
