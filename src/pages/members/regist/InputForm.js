@@ -49,7 +49,7 @@ function InputForm() {
             required
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={9}>
           <TextField
             fullWidth
             type='email'
@@ -58,6 +58,11 @@ function InputForm() {
             label='이메일'
             required
           />
+        </Grid>
+        <Grid item xs={3}>
+          <Button fullWidth variant='contained' sx={{height: '100%'}}>
+            이메일 인증하기
+          </Button>
         </Grid>
         <Grid item xs={6}>
           <TextField
