@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
+/* 파일명 수정 수정 */
 
 const OutletContainer = styled.div`
   display: flex;
