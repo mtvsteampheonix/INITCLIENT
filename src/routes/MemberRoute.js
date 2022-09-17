@@ -3,6 +3,7 @@ import Login from '../pages/members/Login';
 import AgreeTerms from '../pages/members/regist/AgreeTerms';
 import InputForm from '../pages/members/regist/InputForm';
 import RegistSuccess from '../pages/members/regist/RegistSuccess';
+import Error404 from './../pages/errors/Error404';
 export default function MemberRoute() {
   return (
     <Routes>
@@ -12,6 +13,8 @@ export default function MemberRoute() {
         <Route path='input' element={<InputForm />} />
         <Route path='success' element={<RegistSuccess />} />
       </Route>
+
+      <Route path='*' element={<Error404 />} />
     </Routes>
   );
 }

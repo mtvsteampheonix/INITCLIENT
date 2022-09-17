@@ -1,6 +1,6 @@
 import {Route, Routes} from 'react-router-dom';
-import Error404 from './../pages/errors/Error404';
-export default function ProductRoute() {
+import Error404 from '../pages/errors/Error404';
+export default function CompanyRoute() {
   return (
     <Routes>
       <Route></Route>
