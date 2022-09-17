@@ -1,9 +1,9 @@
 import {Route, Routes} from 'react-router-dom';
-import Login from './../../pages/members/Login';
-import AgreeTerms from './../../pages/members/regist/AgreeTerms';
-import InputForm from './../../pages/members/regist/InputForm';
-import RegistSuccess from './../../pages/members/regist/RegistSuccess';
-function Member() {
+import Login from '../pages/members/Login';
+import AgreeTerms from '../pages/members/regist/AgreeTerms';
+import InputForm from '../pages/members/regist/InputForm';
+import RegistSuccess from '../pages/members/regist/RegistSuccess';
+export default function MemberRoute() {
   return (
     <Routes>
       <Route path='login' element={<Login />} />
@@ -15,5 +15,3 @@ function Member() {
     </Routes>
   );
 }
-
-export default Member;

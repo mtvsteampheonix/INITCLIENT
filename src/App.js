@@ -2,10 +2,9 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './App.css';
 import Main from './pages/Main';
 import Layout from './layouts/Layout';
-import JobSearch from './pages/jobSearch/JobSearch';
-import Member from './routes/member/Member';
-import Resume from './routes/resume/Resume';
-
+import ResumeRoute from './routes/ResumeRoute';
+import MemberRoute from './routes/MemberRoute';
+import JobsearchRoute from './routes/JobsearchRoute';
 function App() {
   return (
     <div className='App'>
@@ -14,13 +13,11 @@ function App() {
           <Route path='/' element={<Layout />}>
             <Route index element={<Main />} />
 
-            <Route path='resume/*' element={<Resume />} />
+            <Route path='resume/*' element={<ResumeRoute />} />
 
-            <Route path='member/*' element={<Member />} />
+            <Route path='member/*' element={<MemberRoute />} />
 
-            <Route path='jobsearch'>
-              <Route index element={<JobSearch />} />
-            </Route>
+            <Route path='jobsearch/*' element={<JobsearchRoute />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

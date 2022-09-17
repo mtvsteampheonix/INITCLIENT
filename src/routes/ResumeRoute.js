@@ -1,7 +1,8 @@
 import {Route, Routes} from 'react-router-dom';
-import {AddStepCategory} from '../../pages/resume/add-step';
-import {Manage} from '../../pages/resume/manage';
-export default function Resume() {
+import {AddStepCategory} from '../pages/resume/add-step';
+import {Manage} from '../pages/resume/manage';
+
+export default function ResumeRoute() {
   return (
     <Routes>
       <Route index element={<Manage />} />
