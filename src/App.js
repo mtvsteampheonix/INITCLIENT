@@ -5,6 +5,7 @@ import Layout from './layouts/Layout';
 import {Manage} from './pages/resume/manage';
 import {AddStepCategory} from './pages/resume/add-step';
 import Login from './pages/members/Login';
+import JobSearch from './pages/jobSearch/JobSearch';
 import AgreeTerms from './pages/members/regist/AgreeTerms';
 
 function App() {
@@ -14,15 +15,21 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Main />} />
+
             <Route path='resume'>
               <Route index element={<Manage />} />
               <Route path='add/step1' element={<AddStepCategory />} />
             </Route>
+
             <Route path='member'>
               <Route path='login' element={<Login />} />
               <Route path='regist'>
                 <Route path='agree-terms' element={<AgreeTerms />} />
               </Route>
+            </Route>
+
+            <Route path='jobsearch'>
+              <Route index element={<JobSearch />} />
             </Route>
           </Route>
         </Routes>
