@@ -1,3 +1,4 @@
+import {Margin} from '@mui/icons-material';
 import {
   Checkbox,
   FormGroup,
@@ -89,15 +90,7 @@ export default function AgreeTerms() {
   );
   return (
     <>
-      <Stack
-        justifyContent='center'
-        spacing={1}
-        minWidth={800}
-        margin='auto'
-        paddingBottom={10}
-        width={1200}
-        alignContent='center'
-      >
+      <Stack>
         <Box sx={{display: 'flex', justifyContent: 'center'}}>
           <img style={{width: '300px'}} src='/titleLogo.svg' alt='titleLogo' />
         </Box>
@@ -115,7 +108,7 @@ export default function AgreeTerms() {
           />
           {childrenCheckBox}
         </FormGroup>
-        <Stack direction='row' spacing={5} height={70}>
+        <Stack direction='row' spacing={5} height={70} margin={5}>
           {isCheckedRequired() ? (
             <>
               <Button
