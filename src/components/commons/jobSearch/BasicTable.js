@@ -6,13 +6,13 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {useState} from 'react';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import Pagination from '@mui/material/Pagination';
 import Container from '@mui/material/Container';
+import {useNavigate} from 'react-router-dom';
+import PaginationControlled from './PaginationControlled';
 
 function createData(No, comName, title, interest) {
   return {No, comName, title, interest};
@@ -25,8 +25,11 @@ const rows = [
 ];
 
 export default function BasicTable() {
-  const [interestState, setInterestState] = useState('N');
+  const navigate = useNavigate();
 
+  const toDetails = () => {
+    navigate('./details');
+  };
   return (
     <TableContainer component={Paper}>
       <Table sx={{minWidth: 650}} aria-label='simple table'>
@@ -50,8 +53,10 @@ export default function BasicTable() {
               <TableCell>{row.comName}</TableCell>
               <TableCell>{row.title}</TableCell>
               <TableCell>
-                <Button variant='contained'>지원신청</Button>
-                <IconButton color='success'>
+                <Button variant='contained' onClick={toDetails}>
+                  지원하기
+                </Button>
+                <IconButton color='primary'>
                   {row.interest == 'N' ? <StarBorderIcon /> : <StarIcon />}
                 </IconButton>
               </TableCell>
@@ -59,13 +64,9 @@ export default function BasicTable() {
           ))}
         </TableBody>
       </Table>
+
       <Container maxWidth='sm'>
-        <Pagination
-          style={{align: 'center'}}
-          align='center'
-          count={10}
-          color='primary'
-        />
+        <PaginationControlled />
       </Container>
     </TableContainer>
   );

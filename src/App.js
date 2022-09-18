@@ -49,6 +49,7 @@ function App() {
             <Route path='policy/*' element={<PolicyRoute />} />
 
             <Route path='*' element={<Error404 />} />
+
           </Route>
         </Routes>
       </BrowserRouter>
