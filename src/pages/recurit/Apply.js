@@ -1,7 +1,7 @@
 import ApplyPageHeader from '../../components/applyPage/ApplyPageHeader';
 import styled from 'styled-components';
 import ApplyPageNavbar from '../../components/applyPage/ApplyPageNavbar';
-import ArticleList from './ArticleList';
+import ResumeList from './ResumeList';
 import {useSelector} from 'react-redux';
 import applyPageListStatsReducer from '../../modules/applyPageModule';
 import {Typography} from '@mui/material';
@@ -34,7 +34,7 @@ function Apply() {
         <ApplyArticle>
           <ApplyPageNavbar />
           {listStatsNumber == 0 ? (
-            <ArticleList />
+            <ResumeList />
           ) : listStatsNumber == 1 ? (
             <Typography variant='h1'>포트폴리오</Typography>
           ) : (

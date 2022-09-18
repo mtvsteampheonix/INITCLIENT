@@ -37,7 +37,7 @@ const ItemInnerImage = styled.div`
   border: 1px solid black;
 `;
 
-function ArticleList() {
+function ResumeList() {
   const lists = [
     {
       title: '신입도 사람이다',
@@ -88,4 +88,4 @@ function ArticleList() {
   );
 }
 
-export default ArticleList;
+export default ResumeList;
