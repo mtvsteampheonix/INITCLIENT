@@ -5,6 +5,7 @@ import ResumeList from './ResumeList';
 import {useSelector} from 'react-redux';
 import applyPageListStatsReducer from '../../modules/applyPageModule';
 import {Typography} from '@mui/material';
+import PortfolioList from './PortfolioList';
 
 const ApplyPage = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ function Apply() {
           {listStatsNumber == 0 ? (
             <ResumeList />
           ) : listStatsNumber == 1 ? (
-            <Typography variant='h1'>포트폴리오</Typography>
+            <PortfolioList />
           ) : (
             <Typography variant='h1'>자기소개서</Typography>
           )}
