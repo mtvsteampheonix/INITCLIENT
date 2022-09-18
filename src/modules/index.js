@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
-import tempReducer from './TempModule';
+import termsReducer from './regist/termsModule';
+import applyPageListStatsReducer from './applyPageModule';
 
 const rootReducer = combineReducers({
-  tempReducer
+  termsReducer,
+  applyPageListStatsReducer
 });
 
 export default rootReducer;
