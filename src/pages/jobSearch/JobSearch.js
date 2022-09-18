@@ -7,7 +7,6 @@ import Box from '@mui/material/Box';
 import {Container} from '@mui/system';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
-import {useState} from 'react';
 import BasicTable from '../../components/commons/jobSearch/BasicTable';
 
 function TabPanel(props) {
