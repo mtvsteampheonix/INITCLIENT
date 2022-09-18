@@ -9,7 +9,7 @@ import JobSearch from './pages/jobSearch/JobSearch';
 import AgreeTerms from './pages/members/regist/AgreeTerms';
 import InputForm from './pages/members/regist/InputForm';
 import RegistSuccess from './pages/members/regist/RegistSuccess';
-import Apply from './pages/recurit/Apply';
+import Apply from './pages/recruit/Apply';
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
               <Route path='add/step1' element={<AddStepCategory />} />
             </Route>
 
-            <Route path='recurit/apply' element={<Apply />} />
+            <Route path='recruit/apply' element={<Apply />} />
 
             <Route path='member'>
               <Route path='login' element={<Login />} />
