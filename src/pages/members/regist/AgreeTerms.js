@@ -114,7 +114,7 @@ export default function AgreeTerms() {
             <>
               <Button
                 component={Link}
-                to='./input'
+                to='../input'
                 variant='contained'
                 sx={{
                   width: '100%',
@@ -126,7 +126,7 @@ export default function AgreeTerms() {
 
               <Button
                 component={Link}
-                to='./input-ent'
+                to='../input-ent'
                 variant='contained'
                 sx={{
                   width: '100%',
