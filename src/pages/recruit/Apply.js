@@ -6,7 +6,7 @@ import {useSelector} from 'react-redux';
 import applyPageListStatsReducer from '../../modules/applyPageModule';
 import {Typography} from '@mui/material';
 import PortfolioList from './PortfolioList';
-
+import SelfIntroductionList from './SelfIntroductionList';
 const ApplyPage = styled.div`
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ function Apply() {
           ) : listStatsNumber == 1 ? (
             <PortfolioList />
           ) : (
-            <Typography variant='h1'>자기소개서</Typography>
+            <SelfIntroductionList />
           )}
         </ApplyArticle>
       </ApplyPage>

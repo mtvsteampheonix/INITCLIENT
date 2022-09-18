@@ -12,7 +12,7 @@ const ApplyPageHeaderComponent = styled.nav`
 
 const ButtonGroup = styled.div`
   display: flex;
-  width: 280px;
+  width: 550px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +32,13 @@ function ApplyPageHeader() {
             목록
           </Button>
           <Button style={{width: '130px', height: '40px'}} variant='outlined'>
+            이전
+          </Button>
+          <Button style={{width: '130px', height: '40px'}} variant='outlined'>
             다음
+          </Button>
+          <Button style={{width: '130px', height: '40px'}} variant='outlined'>
+            작성완료
           </Button>
         </ButtonGroup>
       </ApplyPageHeaderComponent>
