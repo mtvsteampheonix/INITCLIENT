@@ -6,14 +6,13 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {useState} from 'react';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import Pagination from '@mui/material/Pagination';
 import Container from '@mui/material/Container';
 import {useNavigate} from 'react-router-dom';
+import PaginationControlled from './PaginationControlled';
 
 function createData(No, comName, title, interest) {
   return {No, comName, title, interest};
@@ -27,7 +26,6 @@ const rows = [
 
 export default function BasicTable() {
   const navigate = useNavigate();
-  const [interestState, setInterestState] = useState('N');
 
   const toDetails = () => {
     navigate('./details');
@@ -58,7 +56,7 @@ export default function BasicTable() {
                 <Button variant='contained' onClick={toDetails}>
                   지원하기
                 </Button>
-                <IconButton color='success'>
+                <IconButton color='primary'>
                   {row.interest == 'N' ? <StarBorderIcon /> : <StarIcon />}
                 </IconButton>
               </TableCell>
@@ -66,13 +64,9 @@ export default function BasicTable() {
           ))}
         </TableBody>
       </Table>
+
       <Container maxWidth='sm'>
-        <Pagination
-          style={{align: 'center'}}
-          align='center'
-          count={10}
-          color='primary'
-        />
+        <PaginationControlled />
       </Container>
     </TableContainer>
   );
