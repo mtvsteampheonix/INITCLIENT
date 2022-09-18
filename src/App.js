@@ -21,12 +21,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Main />} />
-
-            <Route
-              path='resume/*'
-              element={<ResumeRoute />}
-              errorElement={<Error404 />}
-            />
+            
+            <Route path='resume/*' element={<ResumeRoute />} />
 
             <Route path='member/*' element={<MemberRoute />} />
 
@@ -49,7 +45,6 @@ function App() {
             <Route path='policy/*' element={<PolicyRoute />} />
 
             <Route path='*' element={<Error404 />} />
-
           </Route>
         </Routes>
       </BrowserRouter>
