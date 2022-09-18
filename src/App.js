@@ -14,6 +14,7 @@ import CompanyRoute from './routes/CompanyRoute';
 import FaqRoute from './routes/FaqRoute';
 import PolicyRoute from './routes/PolicyRoute';
 import Error404 from './pages/errors/Error404';
+
 function App() {
   return (
     <div className='App'>
