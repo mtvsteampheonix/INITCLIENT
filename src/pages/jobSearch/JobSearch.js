@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import {Container} from '@mui/system';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
 import {useState} from 'react';
 import BasicTable from '../../components/commons/jobSearch/BasicTable';
 
@@ -49,8 +50,6 @@ function JobSearch() {
     setValue(newValue);
   };
 
-  const [interest, setInterest] = useState(StarBorderIcon);
-
   return (
     <Container>
       <Box sx={{width: '100%'}}>
@@ -65,11 +64,13 @@ function JobSearch() {
             <Tab label='중견·중소' {...a11yProps(2)} />
             <Tab label='공기업·공사 ' {...a11yProps(3)} />
             <Tab label='외국계' {...a11yProps(4)} />
+            <Tab icon={<StarIcon />} iconPosition='end' label='관심기업'></Tab>
           </Tabs>
+
           {/*위에 탭목록, 아래는 탭에 매칭되는 페이지*/}
         </Box>
         <TabPanel value={value} index={0}>
-          <BasicTable/>
+          <BasicTable />
         </TabPanel>
 
         <TabPanel value={value} index={1}>
@@ -83,6 +84,9 @@ function JobSearch() {
         </TabPanel>
         <TabPanel value={value} index={4}>
           외국계
+        </TabPanel>
+        <TabPanel value={value} index={5}>
+          관심기업
         </TabPanel>
       </Box>
     </Container>
