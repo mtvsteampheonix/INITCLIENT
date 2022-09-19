@@ -37,7 +37,7 @@ const rows = [
 export default function MyJobSearchList() {
   return (
     <>
-      <div style={{height: 400, width: 800}}>
+      <div style={{height: 400, width: '100%'}}>
         <DataGrid
           rows={rows}
           columns={columns}

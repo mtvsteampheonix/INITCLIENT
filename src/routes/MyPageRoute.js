@@ -8,10 +8,6 @@ export default function MyPageRoute() {
   return (
     <Routes>
       {/* //이곳에 페이지 추가해주세요  */}
-      <Route path='jobsearch'>
-        <Route index='/' element={<MyJobSearch />} />
-        <Route path='write' element={<AddJobSearch />} />
-      </Route>
 
       <Route index element={<MyPageLayout />} />
       <Route path='/ent' element={<MyPageEntLayOut />} />

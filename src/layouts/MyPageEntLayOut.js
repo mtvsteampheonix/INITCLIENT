@@ -35,11 +35,18 @@ import EditEntMemberInfo from '../pages/mypage/ent-member/EditEntMemberInfo';
 import EntMypageIndex from '../pages/mypage/ent-member/EntMypageIndex';
 import PaymentHistory from '../pages/mypage/ent-member/PaymentHistory';
 import MyProduct from './../pages/mypage/ent-member/MyProduct';
+import MyJobSearch from './../pages/mypage/jobSearch/MyJobSearch';
 
 const drawerWidth = 300;
 
 // 사이드바 메뉴 리스트
-const navList = ['마이페이지 홈', '담당자 정보', '나의 상품', '결제 내역'];
+const navList = [
+  '마이페이지 홈',
+  '담당자 정보',
+  '나의 상품',
+  '결제 내역',
+  'My구직공고'
+];
 // 사이드바 메뉴 앞에 달 아이콘 리스트
 const iconList = [
   <HomeIcon />,
@@ -168,7 +175,8 @@ export default function MyPageEntLayOut() {
             <EntMypageIndex key={index} />, // 마이페이지 홈
             <EditEntMemberInfo key={index} />, // 기업 회원 정보 수정
             <MyProduct key={index} />, // 나의 상품함
-            <PaymentHistory key={index} /> // 결제 내역
+            <PaymentHistory key={index} />, // 결제 내역
+            <MyJobSearch key={index} /> //
           ];
           return isSel ? pageList[index] : null;
         })}
