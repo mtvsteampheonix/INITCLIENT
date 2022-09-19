@@ -5,13 +5,13 @@ import {Container} from '@mui/material';
 
 function Layout() {
   return (
-    <div>
+    <>
       <Header />
-      <Container fixed maxWidth='lg' disableGutters sx={{minWidth: '400px'}}>
+      <Container maxWidth='lg' disableGutters sx={{minWidth: '400px'}}>
         <Outlet />
       </Container>
       <Footer />
-    </div>
+    </>
   );
 }
 

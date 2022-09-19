@@ -14,6 +14,7 @@ import CompanyRoute from './routes/CompanyRoute';
 import FaqRoute from './routes/FaqRoute';
 import PolicyRoute from './routes/PolicyRoute';
 import Error404 from './pages/errors/Error404';
+
 function App() {
   return (
     <div className='App'>
@@ -21,12 +22,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Main />} />
-
-            <Route
-              path='resume/*'
-              element={<ResumeRoute />}
-              errorElement={<Error404 />}
-            />
+            
+            <Route path='resume/*' element={<ResumeRoute />} />
 
             <Route path='member/*' element={<MemberRoute />} />
 
@@ -49,7 +46,6 @@ function App() {
             <Route path='policy/*' element={<PolicyRoute />} />
 
             <Route path='*' element={<Error404 />} />
-
           </Route>
         </Routes>
       </BrowserRouter>
