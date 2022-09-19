@@ -1,4 +1,5 @@
 import {Route, Routes} from 'react-router-dom';
+import ApplyList from '../pages/mypage/applyList/ApplyList';
 import Error404 from './../pages/errors/Error404';
 import MyPageLayout from '../layouts/MyPageLayout';
 import MyPageEntLayOut from './../layouts/MyPageEntLayOut';
