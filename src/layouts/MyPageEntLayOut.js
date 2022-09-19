@@ -1,5 +1,8 @@
+/**
+ * 마이페이지 기업회원 페이지 입니다.
+ */
+
 import {
-  Grid,
   Drawer,
   Toolbar,
   List,
@@ -18,33 +21,31 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {useState} from 'react';
 import InfoIcon from '@mui/icons-material/Info';
-import ApartmentIcon from '@mui/icons-material/Apartment';
-import HandshakeIcon from '@mui/icons-material/Handshake';
-import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
-import {useSelector, useDispatch} from 'react-redux';
-import {SELECT_SIDEBAR} from './../modules/mypage/myPageSidebarModule';
 import HomeIcon from '@mui/icons-material/Home';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import ReceiptIcon from '@mui/icons-material/Receipt';
+import {useSelector, useDispatch} from 'react-redux';
+import {SELECT_SIDEBAR} from '../modules/mypage/myPageSidebarModule';
 import MyPageIndex from './../pages/mypage/member/MypageIndex';
 import EditMemberInfo from './../pages/mypage/member/EditMemberInfo';
 import MyProfile from './../pages/mypage/member/MyProfile';
 import ApplyHistory from './../pages/mypage/member/ApplyHistory';
 import InterviewHistory from './../pages/mypage/member/InterviewHistory';
+import EditEntMemberInfo from '../pages/mypage/ent-member/EditEntMemberInfo';
+import EntMypageIndex from '../pages/mypage/ent-member/EntMypageIndex';
+import PaymentHistory from '../pages/mypage/ent-member/PaymentHistory';
+import MyProduct from './../pages/mypage/ent-member/MyProduct';
 
 const drawerWidth = 300;
 
-const navList = [
-  '마이페이지 홈',
-  '회원 정보',
-  '마이프로필',
-  '지원 내역',
-  '면접 제안 내역'
-];
+// 사이드바 메뉴 리스트
+const navList = ['마이페이지 홈', '담당자 정보', '나의 상품', '결제 내역'];
+// 사이드바 메뉴 앞에 달 아이콘 리스트
 const iconList = [
   <HomeIcon />,
   <InfoIcon />,
-  <ApartmentIcon />,
-  <HistoryEduIcon />,
-  <HandshakeIcon />
+  <ShoppingBagIcon />,
+  <ReceiptIcon />
 ];
 
 const Main = styled('main', {shouldForwardProp: (prop) => prop !== 'open'})(
@@ -94,7 +95,7 @@ const DrawerHeader = styled('div')(({theme}) => ({
   justifyContent: 'flex-end'
 }));
 
-export default function MyPageLayout() {
+export default function MyPageEntLayOut() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const sidebarSelector = useSelector((state) => state.myPageSidebarReducer);
@@ -121,7 +122,7 @@ export default function MyPageLayout() {
             <MenuIcon />
           </IconButton>
           <Typography variant='h6' noWrap component='div'>
-            개인 회원 마이 페이지
+            기업 회원 마이 페이지
           </Typography>
         </Toolbar>
       </AppBar>
@@ -164,11 +165,10 @@ export default function MyPageLayout() {
         {sidebarSelector.map((isSel, index) => {
           // 마이페이지 링크 연결
           const pageList = [
-            <MyPageIndex key={index} />, // 마이페이지 홈
-            <EditMemberInfo key={index} />, // 회원 정보
-            <MyProfile key={index} />, // 마이프로필
-            <ApplyHistory key={index} />, // 지원내역
-            <InterviewHistory key={index} /> // 면접 제안 내역
+            <EntMypageIndex key={index} />, // 마이페이지 홈
+            <EditEntMemberInfo key={index} />, // 기업 회원 정보 수정
+            <MyProduct key={index} />, // 나의 상품함
+            <PaymentHistory key={index} /> // 결제 내역
           ];
           return isSel ? pageList[index] : null;
         })}

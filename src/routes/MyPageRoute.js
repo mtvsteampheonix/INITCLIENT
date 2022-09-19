@@ -3,6 +3,7 @@ import MyJobSearch from '../pages/mypage/jobSearch/MyJobSearch';
 import Error404 from './../pages/errors/Error404';
 import AddJobSearch from '../pages/mypage/jobSearch/AddJobSearch';
 import MyPageLayout from '../layouts/MyPageLayout';
+import MyPageEntLayOut from './../layouts/MyPageEntLayOut';
 export default function MyPageRoute() {
   return (
     <Routes>
@@ -13,6 +14,7 @@ export default function MyPageRoute() {
       </Route>
 
       <Route index element={<MyPageLayout />} />
+      <Route path='/ent' element={<MyPageEntLayOut />} />
 
       <Route path='*' element={<Error404 />} />
     </Routes>
