@@ -168,34 +168,36 @@ function Header() {
   };
 
   return (
-    <StyledHeader>
-      <HeaderFrame>
-        <HeaderLogo>
-          <LogoGroup>
-            <Link to='/' style={{textDecoration: 'none'}}>
-              <LogoImg>
-                <LogoContainer src={process.env.PUBLIC_URL + '/Logo.png'} />
-              </LogoImg>
+    <>
+      <StyledHeader>
+        <HeaderFrame>
+          <HeaderLogo>
+            <LogoGroup>
+              <Link to='/' style={{textDecoration: 'none'}}>
+                <LogoImg>
+                  <LogoContainer src={process.env.PUBLIC_URL + '/Logo.png'} />
+                </LogoImg>
+              </Link>
+              <Link to='/' style={{textDecoration: 'none'}}>
+                <LogoText>INIT</LogoText>
+              </Link>
+            </LogoGroup>
+          </HeaderLogo>
+          {memberStatus === 'company'
+            ? InnerHeaderCorComponent()
+            : InnerHeaderPersonalComponent()}
+          {authenticated ? (
+            <LoginText>
+              어서오세요,<LoginMemberText>홍길동</LoginMemberText>님
+            </LoginText>
+          ) : (
+            <Link to='/member/login'>
+              <StyledButton>로그인</StyledButton>
             </Link>
-            <Link to='/' style={{textDecoration: 'none'}}>
-              <LogoText>INIT</LogoText>
-            </Link>
-          </LogoGroup>
-        </HeaderLogo>
-        {memberStatus === 'company'
-          ? InnerHeaderCorComponent()
-          : InnerHeaderPersonalComponent()}
-        {authenticated ? (
-          <LoginText>
-            어서오세요,<LoginMemberText>홍길동</LoginMemberText>님
-          </LoginText>
-        ) : (
-          <Link to='/member/login'>
-            <StyledButton>로그인</StyledButton>
-          </Link>
-        )}
-      </HeaderFrame>
-    </StyledHeader>
+          )}
+        </HeaderFrame>
+      </StyledHeader>
+    </>
   );
 }
 
