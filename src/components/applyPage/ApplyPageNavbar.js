@@ -15,7 +15,7 @@ function ApplyPageNavbar() {
   };
   return (
     <>
-      <Box sx={{width: '200px', maxWidth: 360, bgcolor: 'background.paper'}}>
+      <Box sx={{bgcolor: 'background.paper'}}>
         <List component='nav' aria-label='main mailbox folders'>
           <ListItemButton
             selected={selectedIndex === 0}
