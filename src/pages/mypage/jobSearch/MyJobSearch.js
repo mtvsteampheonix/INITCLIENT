@@ -13,7 +13,7 @@ function TabPanel(props) {
   const {children, value, index, ...other} = props;
 
   return (
-    <div
+    <Box
       role='tabpanel'
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -25,7 +25,7 @@ function TabPanel(props) {
           <Typography>{children}</Typography>
         </Box>
       )}
-    </div>
+    </Box>
   );
 }
 
@@ -69,12 +69,11 @@ export default function BasicTabs() {
       {/* [위]: 탭 메뉴 // [아래]: 탭 메뉴 클릭시 출력 화면 */}
       <TabPanel value={value} index={0}>
         <MyJobSearchList />
-        <div style={{display:'flex', justifyContent:'center'}}>
-        <Button variant='contained' onClick={toWrite}>
-          공고작성
-        </Button>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+          <Button variant='contained' onClick={toWrite}>
+            공고작성
+          </Button>
         </div>
-        
       </TabPanel>
       <TabPanel value={value} index={1}>
         <AddJobSearch />

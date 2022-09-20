@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {DataGrid} from '@mui/x-data-grid';
+import { Box } from '@mui/system';
 
 const columns = [
   {field: 'id', headerName: 'ID', width: 70},
@@ -37,7 +38,7 @@ const rows = [
 export default function MyJobSearchList() {
   return (
     <>
-      <div style={{height: 400, width: '100%'}}>
+      <Box style={{height: 400, width: '100%'}}>
         <DataGrid
           rows={rows}
           columns={columns}
@@ -45,7 +46,7 @@ export default function MyJobSearchList() {
           rowsPerPageOptions={[5]}
           checkboxSelection
         />
-      </div>
+      </Box>
     </>
   );
 }
