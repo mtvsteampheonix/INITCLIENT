@@ -8,6 +8,10 @@ export const theme = createTheme({
     gray: {
       main: '#A9A9A9',
       contrastText: '#fff'
+    },
+    initRed: {
+      main: '#FF0000',
+      contrastText: '#fff'
     }
   }
 });
