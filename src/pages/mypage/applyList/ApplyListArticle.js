@@ -9,7 +9,7 @@ import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import CommentIcon from '@mui/icons-material/Comment';
 import Button from '@mui/material/button';
-import {Typography, Box} from '@mui/material';
+import {Typography, Box, Grid} from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
 import SaveIcon from '@mui/icons-material/Save';
 import Pagination from '@mui/material/Pagination';
@@ -102,97 +102,83 @@ function ApplyListArticle() {
 
   return (
     <>
-      <List
-        sx={{
-          width: '1200px',
-          maxWidth: 1000,
-          bgcolor: 'background.paper',
-          display: 'flex',
-          flexDirection: 'column'
-        }}
-      >
-        {applyList.map((apply, index) => {
-          const labelId = `checkbox-list-label-${apply.companyCode}`;
-
-          return (
-            <Item key={apply.companyCode}>
-              <ListItem disablePadding>
-                <ListItemButton
-                  role={undefined}
-                  dense
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between'
-                  }}
+      {applyList.map((companyInfo) => (
+        <>
+          <Grid container paddingLeft={3} paddingTop={1.5}>
+            <Grid item xs={0.5} paddingTop={1.5}>
+              <Checkbox
+                onClick={handleToggle(companyInfo.companyCode)}
+                edge='start'
+                checked={checked.indexOf(companyInfo.companyCode) !== -1}
+                tabIndex={-1}
+                disableRipple
+              />
+            </Grid>
+            <Grid item xs={1.4}>
+              <Grid
+                container
+                flexDirection='column'
+                justifyContent='center'
+                alignItems='center'
+              >
+                <Box paddingTop={1}>
+                  <Typography variant='h6'>{companyInfo.name}</Typography>
+                  <Typography fontSize='12px' textAlign='center'>
+                    {companyInfo.companyCategory}
+                  </Typography>
+                </Box>
+              </Grid>
+            </Grid>
+            <Grid item xs={7.7}>
+              <Grid container flexDirection='column'>
+                <Grid item>
+                  <Typography variant='h4'>
+                    {companyInfo.recruitTitle}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  {companyInfo.recruitConditionList.condition1}{' '}
+                  {companyInfo.recruitConditionList.condition2}{' '}
+                  {companyInfo.recruitConditionList.condition3}{' '}
+                  {companyInfo.recruitConditionList.condition4}
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={1} paddingTop={5}>
+              {companyInfo.applyDate}
+            </Grid>
+            <Grid item xs={1.4} paddingTop={1.2} textAlign='center'>
+              {companyInfo.process == '진행중' ? (
+                <LoadingButton
+                  loading={true}
+                  loadingPosition='start'
+                  startIcon={<SaveIcon />}
+                  variant='outlined'
                 >
-                  <Box sx={{display: 'flex', flexDirection: 'row'}}>
-                    <Checkbox
-                      onClick={handleToggle(apply.companyCode)}
-                      edge='start'
-                      checked={checked.indexOf(apply.companyCode) !== -1}
-                      tabIndex={-1}
-                      disableRipple
-                      inputProps={{
-                        'aria-labelledby': labelId
-                      }}
-                    />
-                    <CompanyName>
-                      <Typography variant='h6'>{apply.name}</Typography>
-                      <Typography sx={{fontSize: '12px'}}>
-                        {apply.companyCategory}
-                      </Typography>
-                    </CompanyName>
-                    <RecruitContent>
-                      <Typography variant='h4'>{apply.recruitTitle}</Typography>
-                      <Typography>
-                        {apply.recruitConditionList.condition1}{' '}
-                        {apply.recruitConditionList.condition2}{' '}
-                        {apply.recruitConditionList.condition3}{' '}
-                        {apply.recruitConditionList.condition4}
-                        <Typography sx={{float: 'right'}}>
-                          {apply.applyDate}
-                        </Typography>
-                      </Typography>
-                    </RecruitContent>
-                  </Box>
-                  {apply.process == '합격' ? (
-                    <Button sx={{width: '100px'}} variant='outlined'>
-                      합격
-                    </Button>
-                  ) : apply.process == '불합격' ? (
-                    <Button
-                      sx={{width: '100px'}}
-                      variant='outlined'
-                      color='error'
-                    >
-                      불합격
-                    </Button>
-                  ) : (
-                    <LoadingButton
-                      loading
-                      loadingPosition='start'
-                      startIcon={<SaveIcon />}
-                      variant='outlined'
-                    >
-                      진행중
-                    </LoadingButton>
-                  )}
-                </ListItemButton>
-              </ListItem>
-            </Item>
-          );
-        })}
-        <Stack spacing={2} sx={{alignItems: 'center', marginLeft: '220px'}}>
-          <Typography>Page: {page}</Typography>
-          <Pagination
-            sx={{textAlign: 'center'}}
-            count={10}
-            page={page}
-            onChange={handleChange}
-          />
-        </Stack>
-      </List>
+                  진행중
+                </LoadingButton>
+              ) : companyInfo.process == '불합격' ? (
+                <Button sx={{width: '100px'}} variant='outlined' color='error'>
+                  불합격
+                </Button>
+              ) : (
+                <Button sx={{width: '100px'}} variant='outlined'>
+                  수락
+                </Button>
+              )}
+            </Grid>
+          </Grid>
+        </>
+      ))}
+      <Stack spacing={2} sx={{alignItems: 'center'}}>
+        <Typography>Page: {page}</Typography>
+        <Pagination
+          sx={{textAlign: 'center'}}
+          count={10}
+          page={page}
+          onChange={handleChange}
+        />
+      </Stack>
     </>
   );
 }

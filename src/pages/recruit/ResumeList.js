@@ -15,11 +15,11 @@ const Items = styled.div`
   width: 980px;
 `;
 const Item = styled.div`
-  width: 900px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #cccccc;
   flex-direction: row;
+  width: 980px;
   height: 200px;
   gap: 20px;
 `;

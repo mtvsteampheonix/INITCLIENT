@@ -3,7 +3,8 @@ import {
   FormControl,
   FormControlLabel,
   Radio,
-  RadioGroup
+  RadioGroup,
+  Paper
 } from '@mui/material';
 import styled from 'styled-components';
 
@@ -11,15 +12,15 @@ const Items = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 1000px;
   width: 980px;
+  height: 1000px;
 `;
 const Item = styled.div`
-  width: 900px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #cccccc;
   flex-direction: row;
+  width: 980px;
   height: 200px;
   gap: 20px;
 `;
