@@ -98,6 +98,17 @@ export default function EditMemberInfo() {
               확인
             </Button>
           </Grid>
+          <Grid
+            item
+            xs={12}
+            marginTop={5}
+            display='flex'
+            justifyContent='flex-end'
+          >
+            <Button color='initRed' variant='contained' sx={{height: '50px'}}>
+              회원 탈퇴
+            </Button>
+          </Grid>
         </Grid>
       </Box>
     </>
