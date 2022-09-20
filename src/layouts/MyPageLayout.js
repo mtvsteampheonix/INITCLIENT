@@ -1,5 +1,4 @@
 import {
-  Grid,
   Drawer,
   Toolbar,
   List,
@@ -21,30 +20,31 @@ import InfoIcon from '@mui/icons-material/Info';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
-import {useSelector, useDispatch} from 'react-redux';
-import {SELECT_SIDEBAR} from './../modules/mypage/myPageSidebarModule';
 import HomeIcon from '@mui/icons-material/Home';
-import MyPageIndex from './../pages/mypage/member/MypageIndex';
-import EditMemberInfo from './../pages/mypage/member/EditMemberInfo';
-import MyProfile from './../pages/mypage/member/MyProfile';
-import ApplyHistory from './../pages/mypage/member/ApplyHistory';
-import InterviewHistory from './../pages/mypage/member/InterviewHistory';
+import {Link, Outlet} from 'react-router-dom';
 
 const drawerWidth = 300;
 
-const navList = [
+const navTitleList = [
   '마이페이지 홈',
   '회원 정보',
   '마이프로필',
   '지원 내역',
   '면접 제안 내역'
 ];
-const iconList = [
+const navIconList = [
   <HomeIcon />,
   <InfoIcon />,
   <ApartmentIcon />,
   <HistoryEduIcon />,
   <HandshakeIcon />
+];
+const navLinkList = [
+  './',
+  'edit-profile',
+  'my-profile',
+  'apply-list',
+  'suggestion-list'
 ];
 
 const Main = styled('main', {shouldForwardProp: (prop) => prop !== 'open'})(
@@ -93,20 +93,13 @@ const DrawerHeader = styled('div')(({theme}) => ({
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end'
 }));
-
-export default function MyPageLayout() {
+export default function MypageLayout() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
-  const sidebarSelector = useSelector((state) => state.myPageSidebarReducer);
-  const dispatch = useDispatch();
-
   const handleDrawerToggle = () => {
     setOpen(!open);
   };
 
-  const onclickSidebarHandler = (index) => {
-    dispatch({type: SELECT_SIDEBAR, payload: index});
-  };
   return (
     <>
       <AppBar open={open}>
@@ -149,11 +142,11 @@ export default function MyPageLayout() {
         </DrawerHeader>
         <Divider />
         <List>
-          {navList.map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton onClick={() => onclickSidebarHandler(index)}>
-                <ListItemIcon>{iconList[index]}</ListItemIcon>
-                <ListItemText primary={text} />
+          {navTitleList.map((title, index) => (
+            <ListItem key={index} disablePadding>
+              <ListItemButton component={Link} to={navLinkList[index]}>
+                <ListItemIcon>{navIconList[index]}</ListItemIcon>
+                <ListItemText primary={title} />
               </ListItemButton>
             </ListItem>
           ))}
@@ -161,17 +154,7 @@ export default function MyPageLayout() {
         <Divider />
       </Drawer>
       <Main>
-        {sidebarSelector.map((isSel, index) => {
-          // 마이페이지 링크 연결
-          const pageList = [
-            <MyPageIndex key={index} />, // 마이페이지 홈
-            <EditMemberInfo key={index} />, // 회원 정보
-            <MyProfile key={index} />, // 마이프로필
-            <ApplyHistory key={index} />, // 지원내역
-            <InterviewHistory key={index} /> // 면접 제안 내역
-          ];
-          return isSel ? pageList[index] : null;
-        })}
+        <Outlet />
       </Main>
     </>
   );

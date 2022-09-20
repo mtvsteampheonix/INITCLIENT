@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import {useState} from 'react';
 import {LoadingButton} from '@mui/lab';
+import {Link} from 'react-router-dom';
 
 const tempData = {
   id: 'tempId'
@@ -111,12 +112,23 @@ export default function Withdraw() {
         marginTop={8}
         marginBottom={8}
       >
-        <Grid container justifyContent='center'>
+        <Grid container justifyContent='center' spacing={4}>
+          <Grid item xs={3}>
+            <Button
+              component={Link}
+              to='/mypage/edit-profile'
+              fullWidth
+              size='large'
+              variant='contained'
+            >
+              돌아가기
+            </Button>
+          </Grid>
           <Grid item xs={3}>
             <LoadingButton
               fullWidth
               loading={isAgree}
-              loadingIndicator='동의해주세요'
+              loadingIndicator='탈퇴하기'
               size='large'
               variant='contained'
             >
