@@ -3,17 +3,11 @@ import {
   Box,
   Typography,
   Button,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemIcon,
   TextField,
   Divider,
   ButtonGroup
 } from '@mui/material';
-import PersonIcon from '@mui/icons-material/Person';
-import EmailIcon from '@mui/icons-material/Email';
-import {height} from '@mui/system';
+import {Link} from 'react-router-dom';
 
 export default function EditMemberInfo() {
   const profile = {
@@ -105,7 +99,13 @@ export default function EditMemberInfo() {
             display='flex'
             justifyContent='flex-end'
           >
-            <Button color='initRed' variant='contained' sx={{height: '50px'}}>
+            <Button
+              component={Link}
+              to='../withdraw'
+              color='initRed'
+              variant='contained'
+              sx={{height: '50px'}}
+            >
               회원 탈퇴
             </Button>
           </Grid>
