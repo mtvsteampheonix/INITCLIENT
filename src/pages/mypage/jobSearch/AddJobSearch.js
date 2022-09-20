@@ -39,7 +39,7 @@ export default function AddJobSearch() {
 
   return (
     <>
-      <Stack spacing={2} fullWidth>
+      <Stack spacing={1} fullWidth>
         <h3>상세정보작성</h3>
         <Box sx={{minWidth: 120}}>
           <FormControl fullWidth>
@@ -127,7 +127,7 @@ export default function AddJobSearch() {
         </Box>
 
         <MultipleSelectBox
-          title='필요기술스택'
+          title='기술스택'
           list={skillList}
         ></MultipleSelectBox>
         <MultipleSelectBox title='직무' list={jobList}></MultipleSelectBox>
@@ -135,11 +135,11 @@ export default function AddJobSearch() {
         <TextField
           fullWidth
           id='outlined-textarea'
-          label='복지사항을 소개해주세요'
-          placeholder='Placeholder'
+          label='복지사항'
+          placeholder='복지사항을 입력해주세요.'
           multiline
-          minRows={8}
-          InputProps={{sx: {height: '100px'}}}
+          minRows={5}
+          InputProps={{sx: {height: '150px'}}}
         />
       </Stack>
       <Box>
@@ -150,14 +150,14 @@ export default function AddJobSearch() {
           required
           id='title'
           label='제목'
-          placeholder='제목을 입력하세요'
+          placeholder='제목을 입력하세요.'
         />
 
         <TextField
           fullWidth
           id='outlined-textarea'
           label='내용'
-          placeholder='Placeholder'
+          placeholder='기업소개글을 작성하세요.'
           multiline
           minRows={8}
           InputProps={{sx: {height: '200px'}}}
