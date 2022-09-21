@@ -7,14 +7,13 @@ import Box from '@mui/material/Box';
 import {Container} from '@mui/system';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
-import {useState} from 'react';
-import BasicTable from '../../components/commons/jobSearch/BasicTable';
+import BasicTable from '../../components/jobSearch/BasicTable';
 
 function TabPanel(props) {
   const {children, value, index, ...other} = props;
 
   return (
-    <div
+    <Box
       role='tabpanel'
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -23,10 +22,10 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box sx={{p: 3}}>
-          <Typography>{children}</Typography>
+          <Box>{children}</Box>
         </Box>
       )}
-    </div>
+    </Box>
   );
 }
 
