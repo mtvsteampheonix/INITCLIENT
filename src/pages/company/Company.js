@@ -1,74 +1,183 @@
 import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import StarIcon from '@mui/icons-material/Star';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import Container from '@mui/material/Container';
-import {useNavigate} from 'react-router-dom';
-// import PaginationControlled from '../../components/company/PaginationControlled';
-import PaginationControlled from '../../components/company/PaginationControlled';
+import StarIcon from '@mui/icons-material/Star';
 
-function createData(No, comName, title, interest) {
-  return {No, comName, title, interest};
-}
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import DirectionsIcon from '@mui/icons-material/Directions';
 
-const rows = [
-  createData(1, 'SAMSUNG', '메타버스 아카데미 구합니다.', 'Y'),
-  createData(2, 'APPLE', '메타버스 아카데미 학생구합니다.', 'N'),
-  createData(3, 'INIT', '메타버스 아카데미 네트워크구합니다.', 'Y')
-];
+import {styled} from '@mui/material/styles';
+import Grid from '@mui/material/Unstable_Grid2';
 
-export default function Company() {
-  const navigate = useNavigate();
-
-  const toDetails = () => {
-    navigate('./details');
+function Company() {
+  const [age1, setAge1] = React.useState('');
+  const [age2, setAge2] = React.useState('');
+  const [age3, setAge3] = React.useState('');
+  const [isBookmark, setIsBookmark] = React.useState(false);
+  const handleChangeBookmark = (e) => {
+    setIsBookmark(!isBookmark);
   };
-  return (
-    <TableContainer component={Paper}>
-      <Table sx={{minWidth: 650}} aria-label='simple table'>
-        <TableHead>
-          <TableRow>
-            <TableCell>No.</TableCell>
-            <TableCell>기업명</TableCell>
-            <TableCell>구직공고명</TableCell>
-            <TableCell></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.No}
-              sx={{'&:last-child td, &:last-child th': {border: 0}}}
-            >
-              <TableCell component='th' scope='row'>
-                {row.No}
-              </TableCell>
-              <TableCell>{row.comName}</TableCell>
-              <TableCell>{row.title}</TableCell>
-              <TableCell>
-                <Button variant='contained' onClick={toDetails}>
-                  지원하기
-                </Button>
-                <IconButton color='primary'>
-                  {row.interest == 'N' ? <StarBorderIcon /> : <StarIcon />}
-                </IconButton>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+  //위 3개 콘스트는 셀렉트박스 3개 다르게 움직이기 위함 임다
 
-      <Container maxWidth='sm'>
-        <PaginationControlled />
-      </Container>
-    </TableContainer>
+  const handleChange1 = (event) => {
+    setAge1(event.target.value);
+  };
+  const handleChange2 = (event) => {
+    setAge2(event.target.value);
+  };
+  const handleChange3 = (event) => {
+    setAge3(event.target.value);
+  };
+  //위 3개 콘스트는 값 저장 하는데 쓰는거 결국 셀렉트 박스 임다
+
+  const Item = styled(Paper)(({theme}) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary
+  }));
+  //이 콘스트는 네모난 박스 형식 grid 만드는거 입니다. 네모난거 6개 있는거 그거 ㅇ오른ㅉ쪽 위에 별표시 있는거 바로 그 것!
+
+  return (
+    <div>
+      {' '}
+      <h1> 하이루 베이비들 // 컴퍼니 기본화면임다 </h1>
+      {/* 위 내용은 사기충전을 위함 입니다. */}
+      <Paper
+        component='form'
+        sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}
+      >
+        {/* <IconButton sx={{p: '10px'}} aria-label='menu'>
+          <MenuIcon />
+        </IconButton> */}
+        <InputBase
+          sx={{ml: 1, flex: 1}}
+          placeholder='구글맵 서치 아닙니다. 오해하지 마십쇼'
+          inputProps={{'aria-label': 'search google maps'}}
+        />
+        <IconButton type='button' sx={{p: '10px'}} aria-label='search'>
+          <SearchIcon />
+        </IconButton>
+        <Divider sx={{height: 28, m: 0.5}} orientation='vertical' />
+        {/* <IconButton color='primary' sx={{p: '10px'}} aria-label='directions'>
+          <DirectionsIcon />
+        </IconButton> */}
+        {/* 구글맵 우회전 표시 */}
+      </Paper>
+      <br></br>
+      <Box sx={{minWidth: 120, display: 'flex'}}>
+        <FormControl fullWidth>
+          <InputLabel id='demo-simple-select-label'>연봉</InputLabel>
+          <Select
+            labelId='demo-simple-select-label1'
+            id='demo-simple-select1'
+            value={age1}
+            label='Age'
+            onChange={handleChange1}
+          >
+            <MenuItem value={10}>2천 ~ 4천</MenuItem>
+            <MenuItem value={20}>4천 ~ 6천</MenuItem>
+            <MenuItem value={30}>6천 이상</MenuItem>
+          </Select>
+        </FormControl>
+
+        <FormControl fullWidth>
+          <InputLabel id='demo-simple-select-label'>직원수</InputLabel>
+          <Select
+            labelId='demo-simple-select-label2'
+            id='demo-simple-select2'
+            value={age2}
+            label='Age'
+            onChange={handleChange2}
+          >
+            <MenuItem value={10}>1인 신조</MenuItem>
+            <MenuItem value={20}>100명 미만</MenuItem>
+            <MenuItem value={30}>100명 이상</MenuItem>
+          </Select>
+        </FormControl>
+
+        <FormControl fullWidth>
+          <InputLabel id='demo-simple-select-label'>지역</InputLabel>
+          <Select
+            labelId='demo-simple-select-label3'
+            id='demo-simple-select3'
+            value={age3}
+            label='Age'
+            onChange={handleChange3}
+          >
+            <MenuItem value={10}>서울</MenuItem>
+            <MenuItem value={20}>부산</MenuItem>
+            <MenuItem value={30}>제주도</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Box sx={{width: '100%'}}>
+        <Grid container rowSpacing={1} columnSpacing={{xs: 1, sm: 2, md: 3}}>
+          <Grid xs={6}>
+            <Item>
+              사과는 애플
+              <IconButton color='primary' onClick={handleChangeBookmark}>
+                {isBookmark ? <StarIcon /> : <StarBorderIcon />}
+              </IconButton>
+            </Item>
+          </Grid>
+          <Grid xs={6}>
+            <Item>
+              성이 3개면 삼성
+              <IconButton color='primary' onClick={handleChangeBookmark}>
+                {isBookmark ? <StarIcon /> : <StarBorderIcon />}
+              </IconButton>
+            </Item>
+          </Grid>
+          <Grid xs={6}>
+            <Item>
+              최씨가 한명이면 최 한
+              <IconButton color='primary' onClick={handleChangeBookmark}>
+                {isBookmark ? <StarIcon /> : <StarBorderIcon />}
+              </IconButton>
+            </Item>
+          </Grid>
+          <Grid xs={6}>
+            <Item>
+              파이어피닉스는 불사조
+              <IconButton color='primary' onClick={handleChangeBookmark}>
+                {isBookmark ? <StarIcon /> : <StarBorderIcon />}
+              </IconButton>
+            </Item>
+          </Grid>
+          <Grid xs={6}>
+            <Item>
+              고진감래를 이어 조진감래
+              <IconButton color='primary' onClick={handleChangeBookmark}>
+                {isBookmark ? <StarIcon /> : <StarBorderIcon />}
+              </IconButton>
+            </Item>
+          </Grid>
+          <Grid xs={6}>
+            <Item>
+              현정이 피곤해는 현피
+              <IconButton color='primary' onClick={handleChangeBookmark}>
+                {isBookmark ? <StarIcon /> : <StarBorderIcon />}
+              </IconButton>
+            </Item>
+          </Grid>
+        </Grid>
+      </Box>
+    </div>
   );
 }
+
+export default Company;
