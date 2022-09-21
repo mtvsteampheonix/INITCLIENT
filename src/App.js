@@ -9,7 +9,7 @@ import ProductRoute from './routes/ProductRoute';
 import ProtfolioRoute from './routes/ProtfolioRoute';
 import RecruitRoute from './routes/RecruitRoute';
 import NoticeRoute from './routes/NoticeRoute';
-import MyPageRoute from './routes/MyPageRoute';
+import MypageRoute from './routes/MypageRoute';
 import CompanyRoute from './routes/CompanyRoute';
 import FaqRoute from './routes/FaqRoute';
 import PolicyRoute from './routes/PolicyRoute';
@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Main />} />
-            
+
             <Route path='resume/*' element={<ResumeRoute />} />
 
             <Route path='member/*' element={<MemberRoute />} />
@@ -37,7 +37,7 @@ function App() {
 
             <Route path='notice/*' element={<NoticeRoute />} />
 
-            <Route path='mypage/*' element={<MyPageRoute />} />
+            <Route path='mypage/*' element={<MypageRoute />} />
 
             <Route path='company/*' element={<CompanyRoute />} />
 

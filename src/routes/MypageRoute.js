@@ -12,7 +12,7 @@ import MypageLayout from '../layouts/MypageLayout';
 import MypageEntLayOut from './../layouts/MypageEntLayOut';
 import WithdrawSuccess from '../pages/members/withdraw/WithdrawSuccess';
 
-export default function MyPageRoute() {
+export default function MypageRoute() {
   return (
     <Routes>
       {/* //이곳에 페이지 추가해주세요  */}
