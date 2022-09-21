@@ -39,13 +39,23 @@ function InputForm() {
         <Grid item xs={12}>
           <TextField fullWidth id='id' name='id' label='아이디' required />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={6}>
           <TextField
             fullWidth
             type='password'
             id='password'
             name='password'
             label='비밀번호'
+            required
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            fullWidth
+            type='password'
+            id='password'
+            name='password'
+            label='비밀번호 확인'
             required
           />
         </Grid>
