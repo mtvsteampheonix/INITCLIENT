@@ -53,8 +53,8 @@ function InputForm() {
           <TextField
             fullWidth
             type='password'
-            id='password'
-            name='password'
+            id='passwordReinput'
+            name='passwordReinput'
             label='비밀번호 확인'
             required
           />

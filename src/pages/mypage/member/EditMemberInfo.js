@@ -5,9 +5,14 @@ import {
   Button,
   TextField,
   Divider,
-  ButtonGroup
+  ButtonGroup,
+  Collapse,
+  Alert,
+  IconButton
 } from '@mui/material';
+import {useState} from 'react';
 import {Link} from 'react-router-dom';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function EditMemberInfo() {
   const profile = {
@@ -16,8 +21,36 @@ export default function EditMemberInfo() {
   };
   const verifiedNumber = '123456';
 
+  const [editConfirm, setEditConfirm] = useState(false);
+
   return (
     <>
+      <Box
+        sx={{
+          position: 'fixed',
+          zIndex: 1100,
+          width: '80%',
+          top: 0
+        }}
+      >
+        <Collapse in={editConfirm}>
+          <Alert
+            action={
+              <IconButton
+                aria-label='close'
+                color='inherit'
+                onClick={() => {
+                  setEditConfirm(false);
+                }}
+              >
+                <CloseIcon />
+              </IconButton>
+            }
+          >
+            수정이 완료되었습니다.
+          </Alert>
+        </Collapse>
+      </Box>
       <Box padding={5}>
         <Grid container spacing={5} columnSpacing={1} marginBottom={10}>
           <Grid item xs={12}>
@@ -88,7 +121,14 @@ export default function EditMemberInfo() {
             </Button>
           </Grid>
           <Grid item xs={6}>
-            <Button fullWidth variant='contained' sx={{height: '50px'}}>
+            <Button
+              fullWidth
+              onClick={() => {
+                setEditConfirm(true);
+              }}
+              variant='contained'
+              sx={{height: '50px'}}
+            >
               확인
             </Button>
           </Grid>
