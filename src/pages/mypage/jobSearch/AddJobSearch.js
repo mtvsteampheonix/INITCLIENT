@@ -8,8 +8,14 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 export default function AddJobSearch() {
+  /*SELECT*/
   const [career, setCareer] = React.useState('');
   const [salary, setSalary] = React.useState('');
   const [employees, setEmployees] = React.useState('');
@@ -36,6 +42,17 @@ export default function AddJobSearch() {
     '백엔드',
     '프론트엔드'
   ];
+
+  /*DIALOGALERT*/
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -163,12 +180,35 @@ export default function AddJobSearch() {
           InputProps={{sx: {height: '200px'}}}
         />
         <Box style={{textAlign: 'center'}}>
-          <Button variant='contained' size='large'>
-            작성
-          </Button>
-          <Button variant='outlined' size='large'>
+          <Box>
+            <Button variant='contained' size='large' onClick={handleClickOpen}>
+              작성
+            </Button>
+            <Dialog
+              open={open}
+              onClose={handleClose}
+              aria-labelledby='alert-dialog-title'
+              aria-describedby='alert-dialog-description'
+            >
+              <DialogTitle id='alert-dialog-title'>
+                {'구직공고작성'} {/*팝업창 메인에 출력할 문구*/}
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText id='alert-dialog-description'>
+                  새로운 구직공고게시글을 추가하시겠습니까?
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button variant='contained' onClick={handleClose} >
+                  예
+                </Button>
+                <Button variant='outlined' onClick={handleClose}>아니요</Button>
+              </DialogActions>
+            </Dialog>
+            <Button variant='outlined' size='large'>
             목록
           </Button>
+          </Box>
         </Box>
       </Box>
     </>

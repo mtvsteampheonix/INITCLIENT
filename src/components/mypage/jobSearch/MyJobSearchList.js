@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {DataGrid} from '@mui/x-data-grid';
+import {DataGrid, GridToolbarQuickFilter} from '@mui/x-data-grid';
 import { Box } from '@mui/system';
 
 const columns = [
@@ -38,6 +38,7 @@ const rows = [
 export default function MyJobSearchList() {
   return (
     <>
+    
       <Box style={{height: 400, width: '100%'}}>
         <DataGrid
           rows={rows}
