@@ -160,7 +160,7 @@ function Header() {
         <Link to='/' style={{textDecoration: 'none'}}>
           <InnerHeaderFrame>프로필관리</InnerHeaderFrame>
         </Link>
-        <Link to='/' style={{textDecoration: 'none'}}>
+        <Link to='/mypage' style={{textDecoration: 'none'}}>
           <InnerHeaderFrame>마이페이지</InnerHeaderFrame>
         </Link>
       </InnerHeader>
