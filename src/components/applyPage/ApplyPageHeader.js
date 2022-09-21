@@ -5,17 +5,16 @@ const ApplyPageHeaderComponent = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 1200px;
   border-bottom: 1px solid black;
   padding-bottom: 10px;
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
-  width: 550px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 `;
 
 const Title = styled.span`

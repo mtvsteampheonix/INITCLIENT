@@ -102,7 +102,7 @@ const DrawerHeader = styled('div')(({theme}) => ({
   justifyContent: 'flex-end'
 }));
 
-export default function MyPageEntLayOut() {
+export default function MypageEntLayOut() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const sidebarSelector = useSelector((state) => state.myPageSidebarReducer);
