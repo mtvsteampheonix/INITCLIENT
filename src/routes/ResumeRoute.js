@@ -1,7 +1,7 @@
 import {Route, Routes} from 'react-router-dom';
 import Error404 from '../pages/errors/Error404';
 import {AddStepCategory} from '../pages/resume/Add-step';
-import AddStepDetail from '../pages/resume/AddStepDetailBasic';
+import AddStepDetail from '../pages/resume/AddStepDetail';
 import {Manage} from '../pages/resume/Manage';
 
 export default function ResumeRoute() {
