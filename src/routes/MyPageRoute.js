@@ -17,8 +17,8 @@ export default function MyPageRoute() {
     <Routes>
       {/* //이곳에 페이지 추가해주세요  */}
 
-      <Route index element={<MyPageLayout />} />
-      <Route path='/ent' element={<MyPageEntLayOut />}>
+      <Route index element={<MypageLayout />} />
+      <Route path='/ent' element={<MypageEntLayOut />}>
         <Route path='edit-company-info' element={<EditCompanyInfo />} />
       </Route>
       {/* <Route index element={<MyPageLayout />} /> */}
