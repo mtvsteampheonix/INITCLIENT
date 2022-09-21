@@ -9,6 +9,7 @@ import EditMemberInfo from '../pages/mypage/member/EditMemberInfo';
 import Withdraw from '../pages/members/Withdraw';
 import MypageLayout from '../layouts/MypageLayout';
 import MypageEntLayOut from './../layouts/MypageEntLayOut';
+import WithdrawSuccess from '../pages/members/withdraw/WithdrawSuccess';
 export default function MyPageRoute() {
   return (
     <Routes>
@@ -23,6 +24,7 @@ export default function MyPageRoute() {
         <Route path='apply-list' element={<ApplyHistory />} />
         <Route path='suggestion-list' element={<InterviewHistory />} />
         <Route path='withdraw' element={<Withdraw />} />
+        <Route path='withdraw-success' element={<WithdrawSuccess />} />
       </Route>
       <Route path='*' element={<Error404 />} />
     </Routes>
