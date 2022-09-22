@@ -72,9 +72,9 @@ function Login() {
       >
         로그인
       </Button>
-      <Box display='flex' container justifyContent='space-between'>
+      <Box display='flex' justifyContent='space-between'>
         <Link to='../find-info'>비밀번호 찾기</Link>
-        <Link href='regist/agree-terms'>회원가입</Link>
+        <Link to='../regist/agree-terms'>회원가입</Link>
       </Box>
       <img src='/titleLogo.svg' alt='titleLogoImg'></img>
     </>
