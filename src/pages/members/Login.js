@@ -73,7 +73,7 @@ function Login() {
         로그인
       </Button>
       <Box display='flex' justifyContent='space-between'>
-        <Link to='../find-info'>비밀번호 찾기</Link>
+        <Link to='../reset-password'>비밀번호 재설정</Link>
         <Link to='../regist/agree-terms'>회원가입</Link>
       </Box>
       <img src='/titleLogo.svg' alt='titleLogoImg'></img>
