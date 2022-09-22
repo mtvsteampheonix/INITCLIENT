@@ -170,7 +170,7 @@ export default function MypageEntLayout() {
               <ListItemButton
                 component={Link}
                 to={navLinkList[index]}
-                onClick={() => onclickSidebarHandler(index)}
+                onClick={handleDrawerToggle}
               >
                 <ListItemIcon>{iconList[index]}</ListItemIcon>
                 <ListItemText primary={text} />
