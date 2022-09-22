@@ -11,6 +11,10 @@ import Withdraw from '../pages/members/Withdraw';
 import MypageLayout from '../layouts/MypageLayout';
 import MypageEntLayOut from './../layouts/MypageEntLayOut';
 import WithdrawSuccess from '../pages/members/withdraw/WithdrawSuccess';
+import EditEntMemberInfo from './../pages/mypage/ent-member/EditEntMemberInfo';
+import MyProduct from './../pages/mypage/ent-member/MyProduct';
+import PaymentHistory from '../pages/mypage/ent-member/PaymentHistory';
+import MyJobSearchList from '../components/mypage/jobSearch/MyJobSearchList';
 
 export default function MypageRoute() {
   return (
@@ -18,8 +22,12 @@ export default function MypageRoute() {
       {/* //이곳에 페이지 추가해주세요  */}
 
       <Route index element={<MypageLayout />} />
-      <Route path='/ent' element={<MypageEntLayOut />}>
+      <Route path='ent' element={<MypageEntLayOut />}>
+        <Route path='edit-profile' element={<EditEntMemberInfo />} />
         <Route path='edit-company-info' element={<EditCompanyInfo />} />
+        <Route path='my-product' element={<MyProduct />} />
+        <Route path='payment' element={<PaymentHistory />} />
+        <Route path='jobsearch' element={<MyJobSearchList />} />
       </Route>
       {/* <Route index element={<MyPageLayout />} /> */}
       <Route path='' element={<MypageLayout />}>

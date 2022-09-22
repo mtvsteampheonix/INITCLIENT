@@ -27,6 +27,9 @@ function EditEntMemberInfo() {
   const [isAlert, setIsAlert] = useState(false);
   return (
     <>
+      <Box>
+        <Typography variant='h4'>기업 회원 정보 조회/수정</Typography>
+      </Box>
       <CustomAlert
         isAlert={isAlert}
         setIsAlert={setIsAlert}
@@ -34,9 +37,6 @@ function EditEntMemberInfo() {
       />
       <Box padding={5}>
         <Grid container spacing={5} columnSpacing={1} marginBottom={10}>
-          <Grid item xs={12}>
-            <Typography variant='h4'>기업 회원 정보 조회/수정</Typography>
-          </Grid>
           <Grid item xs={8}>
             <TextField fullWidth label='회사명' value={entProfile.entName} />
           </Grid>

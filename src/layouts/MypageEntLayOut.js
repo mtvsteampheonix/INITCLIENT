@@ -26,33 +26,41 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import {useSelector, useDispatch} from 'react-redux';
 import {SELECT_SIDEBAR} from '../modules/mypage/myPageSidebarModule';
-import MyPageIndex from './../pages/mypage/member/MypageIndex';
-import EditMemberInfo from './../pages/mypage/member/EditMemberInfo';
-import MyProfile from './../pages/mypage/member/MyProfile';
-import ApplyHistory from './../pages/mypage/member/ApplyHistory';
-import InterviewHistory from './../pages/mypage/member/InterviewHistory';
 import EditEntMemberInfo from '../pages/mypage/ent-member/EditEntMemberInfo';
 import EntMypageIndex from '../pages/mypage/ent-member/EntMypageIndex';
 import PaymentHistory from '../pages/mypage/ent-member/PaymentHistory';
 import MyProduct from './../pages/mypage/ent-member/MyProduct';
 import MyJobSearch from './../pages/mypage/jobSearch/MyJobSearch';
-
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+import {Link, Outlet} from 'react-router-dom';
+import BusinessIcon from '@mui/icons-material/Business';
 const drawerWidth = 300;
 
 // 사이드바 메뉴 리스트
 const navList = [
   '마이페이지 홈',
-  '담당자 정보',
+  '담당자 정보 조회 및 변경',
+  '기업 정보 조회 및 변경',
+  'My구직공고',
   '나의 상품',
-  '결제 내역',
-  'My구직공고'
+  '결제 내역'
 ];
 // 사이드바 메뉴 앞에 달 아이콘 리스트
 const iconList = [
   <HomeIcon />,
   <InfoIcon />,
+  <BusinessIcon />,
+  <NewspaperIcon />,
   <ShoppingBagIcon />,
   <ReceiptIcon />
+];
+const navLinkList = [
+  './',
+  'edit-profile',
+  'edit-company-info',
+  'jobsearch',
+  'my-product',
+  'payment'
 ];
 
 const Main = styled('main', {shouldForwardProp: (prop) => prop !== 'open'})(
@@ -159,7 +167,11 @@ export default function MypageEntLayOut() {
         <List>
           {navList.map((text, index) => (
             <ListItem key={text} disablePadding>
-              <ListItemButton onClick={() => onclickSidebarHandler(index)}>
+              <ListItemButton
+                component={Link}
+                to={navLinkList[index]}
+                onClick={() => onclickSidebarHandler(index)}
+              >
                 <ListItemIcon>{iconList[index]}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>
@@ -169,17 +181,7 @@ export default function MypageEntLayOut() {
         <Divider />
       </Drawer>
       <Main>
-        {sidebarSelector.map((isSel, index) => {
-          // 마이페이지 링크 연결
-          const pageList = [
-            <EntMypageIndex key={index} />, // 마이페이지 홈
-            <EditEntMemberInfo key={index} />, // 기업 회원 정보 수정
-            <MyProduct key={index} />, // 나의 상품함
-            <PaymentHistory key={index} />, // 결제 내역
-            <MyJobSearch key={index} /> //
-          ];
-          return isSel ? pageList[index] : null;
-        })}
+        <Outlet />
       </Main>
     </>
   );
