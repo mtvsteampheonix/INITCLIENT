@@ -36,15 +36,17 @@ export default function MypageRoute() {
         <Route path='edit-profile' element={<EditMemberInfo />} />
         <Route path='my-profile' element={<MyProfile />} />
         <Route path='apply-list' element={<ApplyHistory />} />
-        <Route path='suggestion-list' element={<InterviewHistory />} />
+        <Route path='suggestion-list'>
+          <Route index element={<InterviewHistory />} />
+          <Route
+            path='details/:companyCode'
+            element={<InterviewSuggestionDetails />}
+          />
+        </Route>
         <Route path='withdraw' element={<Withdraw />} />
         <Route path='withdraw-success' element={<WithdrawSuccess />} />
       </Route>
       <Route path='*' element={<Error404 />} />
-      <Route
-        path='/suggestion-list/details/:companyCode'
-        element={<InterviewSuggestionDetails />}
-      />
     </Routes>
   );
 }
