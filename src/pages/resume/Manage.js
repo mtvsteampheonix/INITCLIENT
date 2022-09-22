@@ -6,6 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import {useNavigate} from 'react-router-dom';
 
 const OutletContainer = styled.div`
   display: flex;
@@ -133,6 +134,8 @@ const ResumeCardDetailContainerText = styled.div`
 
 export function Manage() {
   const [open, setOpen] = React.useState(false);
+  const [resumeCount, setResumeCount] = React.useState(1);
+  const navigate = useNavigate();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -142,63 +145,75 @@ export function Manage() {
     setOpen(false);
   };
 
-  const createResumeCard = (cardNumber, selectCategory) => {
-    return (
-      <ResumeCard>
-        <ResumeCardContainer>
-          <ResumeCardText>예시 이력서 {cardNumber}</ResumeCardText>
-          <ResumeCardButtonContainer>
-            <StyledButton>수정하기</StyledButton>
-            <div>
-              <StyledButton onClick={handleClickOpen}>삭제하기</StyledButton>
-              <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby='alert-dialog-title'
-                aria-describedby='alert-dialog-description'
-              >
-                <DialogTitle id='alert-dialog-title'>
-                  {'삭제하시겠습니까?'}
-                </DialogTitle>
-                <DialogContent>
-                  <DialogContentText id='alert-dialog-description'>
-                    삭제하려는 이력서가 기본 이력서라면 가장 위에 있는 이력서가
-                    대표 이력서로 설정됩니다.
-                  </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={handleClose}>예</Button>
-                  <Button onClick={handleClose} autoFocus>
-                    아니오
-                  </Button>
-                </DialogActions>
-              </Dialog>
-            </div>
-          </ResumeCardButtonContainer>
-        </ResumeCardContainer>
-        <ResumeCardDetailContainer>
-          <ResumeCardDetailContainerText>
-            선택 항목: {selectCategory}
-          </ResumeCardDetailContainerText>
-        </ResumeCardDetailContainer>
-      </ResumeCard>
-    );
+  const handleCloseYesHandler = () => {
+    setResumeCount(resumeCount - 1);
+    setOpen(false);
   };
 
-  const selectCategory = '경력사항, 자격증, 외국어 능력';
-  const cardNumber = 3;
+  const createResumeCard = (cardNumber, selectCategory) => {
+    const resumeResult = [];
+
+    for (let i = resumeCount; i > 0; i--) {
+      resumeResult.push(
+        <ResumeCard>
+          <ResumeCardContainer>
+            <ResumeCardText>예시 이력서 {i}</ResumeCardText>
+            <ResumeCardButtonContainer>
+              <StyledButton>수정하기</StyledButton>
+              <div>
+                <StyledButton onClick={handleClickOpen}>삭제하기</StyledButton>
+                <Dialog
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby='alert-dialog-title'
+                  aria-describedby='alert-dialog-description'
+                >
+                  <DialogTitle id='alert-dialog-title'>
+                    {'삭제하시겠습니까?'}
+                  </DialogTitle>
+                  <DialogContent>
+                    <DialogContentText id='alert-dialog-description'>
+                      삭제하려는 이력서가 기본 이력서라면 가장 위에 있는
+                      이력서가 대표 이력서로 설정됩니다.
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={handleCloseYesHandler}>예</Button>
+                    <Button onClick={handleClose} autoFocus>
+                      아니오
+                    </Button>
+                  </DialogActions>
+                </Dialog>
+              </div>
+            </ResumeCardButtonContainer>
+          </ResumeCardContainer>
+          <ResumeCardDetailContainer>
+            <ResumeCardDetailContainerText>
+              선택 항목: {selectCategory}
+            </ResumeCardDetailContainerText>
+          </ResumeCardDetailContainer>
+        </ResumeCard>
+      );
+    }
+    return resumeResult;
+  };
 
   return (
     <OutletContainer>
       <ResumeMainContainer>
         <ResumeContainer>
           <ResumeHeaderText>나의 이력서</ResumeHeaderText>
-          <StyledButton>새 이력서 추가</StyledButton>
+          <StyledButton
+            onClick={() => {
+              // setResumeCount(resumeCount + 1);
+              navigate('/resume/add/step1');
+            }}
+          >
+            새 이력서 추가
+          </StyledButton>
         </ResumeContainer>
         <ResumeList>
           {createResumeCard(1, '경력사항, 자격증, 외국어 능력')}
-          {createResumeCard(2, '경력사항, 자격증')}
-          {createResumeCard(3, '경력사항, 수상경력')}
         </ResumeList>
       </ResumeMainContainer>
     </OutletContainer>
