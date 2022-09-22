@@ -9,7 +9,7 @@ import InterviewHistory from '../pages/mypage/member/InterviewHistory';
 import EditMemberInfo from '../pages/mypage/member/EditMemberInfo';
 import Withdraw from '../pages/members/Withdraw';
 import MypageLayout from '../layouts/MypageLayout';
-import MypageEntLayOut from './../layouts/MypageEntLayOut';
+import MypageEntLayout from './../layouts/MypageEntLayout';
 import WithdrawSuccess from '../pages/members/withdraw/WithdrawSuccess';
 import EditEntMemberInfo from './../pages/mypage/ent-member/EditEntMemberInfo';
 import MyProduct from './../pages/mypage/ent-member/MyProduct';
@@ -22,7 +22,7 @@ export default function MypageRoute() {
       {/* //이곳에 페이지 추가해주세요  */}
 
       <Route index element={<MypageLayout />} />
-      <Route path='ent' element={<MypageEntLayOut />}>
+      <Route path='ent' element={<MypageEntLayout />}>
         <Route path='edit-profile' element={<EditEntMemberInfo />} />
         <Route path='edit-company-info' element={<EditCompanyInfo />} />
         <Route path='my-product' element={<MyProduct />} />
