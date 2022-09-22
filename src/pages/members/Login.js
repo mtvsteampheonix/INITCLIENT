@@ -6,11 +6,11 @@ import {
   TextField,
   Typography,
   Button,
-  Grid,
-  Link
+  Grid
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import {Box} from '@mui/system';
+import {Link} from 'react-router-dom';
 
 function Login() {
   return (
@@ -72,14 +72,10 @@ function Login() {
       >
         로그인
       </Button>
-      <Grid container>
-        <Grid item xs>
-          <Link>비밀번호 찾기</Link>
-        </Grid>
-        <Grid item>
-          <Link href='regist/agree-terms'>회원가입</Link>
-        </Grid>
-      </Grid>
+      <Box display='flex' justifyContent='space-between'>
+        <Link to='../reset-password'>비밀번호 재설정</Link>
+        <Link to='../regist/agree-terms'>회원가입</Link>
+      </Box>
       <img src='/titleLogo.svg' alt='titleLogoImg'></img>
     </>
   );
