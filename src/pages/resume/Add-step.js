@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
-/* 파일명 수정 수정 */
+import {useNavigate} from 'react-router-dom';
+import {useForm} from 'react-hook-form';
+import {useDispatch, useSelector} from 'react-redux';
+import {RESUME_SELECT} from '../../modules/resume/addStepModule';
 
 const OutletContainer = styled.div`
   display: flex;
@@ -24,7 +27,7 @@ const StyledButton = styled.button`
   border-color: #4199e1;
 `;
 
-const AddMainContainer = styled.div`
+const AddMainContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -161,9 +164,31 @@ const CardText = styled.div`
 
 export function AddStepCategory() {
   const label = {inputProps: {'aria-label': 'checked'}};
+  const {register, handleSubmit} = useForm();
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+  const selectedList = useSelector((state) => state.resumeSelectReducer);
+
   return (
     <OutletContainer>
-      <AddMainContainer>
+      <AddMainContainer
+        onSubmit={handleSubmit((data) => {
+          dispatch({
+            type: RESUME_SELECT,
+            payload: {
+              career: data.career,
+              activity: data.activity,
+              external: data.external,
+              foreign: data.foreign,
+              experience: data.experience,
+              qualification: data.qualification
+            }
+          });
+          navigate('/resume/add/step2');
+          console.log(data);
+        })}
+      >
         <AddHeaderText>이력서 등록</AddHeaderText>
         <AddBox>
           <AddBoxText>
@@ -187,40 +212,40 @@ export function AddStepCategory() {
         <SelectCategoryContentContainer>
           <SelectCategoryContentContainerList>
             <SelectCategoryContentContainerCard>
-              <Checkbox {...label} />
+              <Checkbox {...label} {...register('career')} />
               <CardText>경력사항</CardText>
             </SelectCategoryContentContainerCard>
 
             <SelectCategoryContentContainerCard>
-              <Checkbox {...label} />
+              <Checkbox {...label} {...register('activity')} />
               <CardText>주요활동 및 수상경력</CardText>
             </SelectCategoryContentContainerCard>
 
             <SelectCategoryContentContainerCard>
-              <Checkbox {...label} />
+              <Checkbox {...label} {...register('external')} />
               <CardText>해외경험</CardText>
             </SelectCategoryContentContainerCard>
           </SelectCategoryContentContainerList>
 
           <SelectCategoryContentContainerList>
             <SelectCategoryContentContainerCard>
-              <Checkbox {...label} />
+              <Checkbox {...label} {...register('foreign')} />
               <CardText>외국어 능력</CardText>
             </SelectCategoryContentContainerCard>
 
             <SelectCategoryContentContainerCard>
-              <Checkbox {...label} />
+              <Checkbox {...label} {...register('experience')} />
               <CardText>직업 훈련 이수 이력</CardText>
             </SelectCategoryContentContainerCard>
 
             <SelectCategoryContentContainerCard>
-              <Checkbox {...label} />
+              <Checkbox {...label} {...register('qualification')} />
               <CardText>보유 자격 면허</CardText>
             </SelectCategoryContentContainerCard>
           </SelectCategoryContentContainerList>
         </SelectCategoryContentContainer>
 
-        <StyledButton>이력서 작성하기</StyledButton>
+        <StyledButton type='submit'>이력서 작성하기</StyledButton>
       </AddMainContainer>
     </OutletContainer>
   );
