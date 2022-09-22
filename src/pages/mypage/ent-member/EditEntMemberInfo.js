@@ -14,6 +14,8 @@ import {
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
 import {height} from '@mui/system';
+import CustomAlert from '../../../components/commons/CustomAlert';
+import {useState} from 'react';
 
 function EditEntMemberInfo() {
   const entProfile = {
@@ -22,9 +24,14 @@ function EditEntMemberInfo() {
     email: 'test@example.com'
   };
   const verifiedNumber = '123456';
-
+  const [isAlert, setIsAlert] = useState(false);
   return (
     <>
+      <CustomAlert
+        isAlert={isAlert}
+        setIsAlert={setIsAlert}
+        message='수정이 완료되었습니다.'
+      />
       <Box padding={5}>
         <Grid container spacing={5} columnSpacing={1} marginBottom={10}>
           <Grid item xs={12}>
@@ -103,7 +110,12 @@ function EditEntMemberInfo() {
             </Button>
           </Grid>
           <Grid item xs={6}>
-            <Button fullWidth variant='contained' sx={{height: '50px'}}>
+            <Button
+              onClick={() => setIsAlert(true)}
+              fullWidth
+              variant='contained'
+              sx={{height: '50px'}}
+            >
               확인
             </Button>
           </Grid>
