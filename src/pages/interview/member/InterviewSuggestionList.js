@@ -9,6 +9,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import {useNavigate} from 'react-router-dom';
 
 // 헤더부분 styled
 const ApplyPageHeaderComponent = styled.nav`
@@ -40,6 +41,7 @@ const FormGroup = styled.div`
 `;
 
 export function InterviewSuggestionList() {
+  const navigate = useNavigate();
   const [page, setPage] = React.useState(1);
   const handleChange = (event, value) => {
     setPage(value);
@@ -150,7 +152,16 @@ export function InterviewSuggestionList() {
       {/* 바디부분입니다. */}
       {companyList.map((companyInfo) => (
         <>
-          <Grid container paddingLeft={3} paddingTop={1.5}>
+          <Grid
+            container
+            paddingLeft={3}
+            paddingTop={1.5}
+            onClick={() => {
+              navigate(
+                '/mypage/suggestion-list/details/' + companyInfo.companyCode
+              );
+            }}
+          >
             <Grid item xs={0.5} paddingTop={1.5}>
               <Checkbox
                 onClick={handleToggle(companyInfo.companyCode)}
