@@ -9,12 +9,14 @@ import InterviewHistory from '../pages/mypage/member/InterviewHistory';
 import EditMemberInfo from '../pages/mypage/member/EditMemberInfo';
 import Withdraw from '../pages/members/Withdraw';
 import MypageLayout from '../layouts/MypageLayout';
-import MypageEntLayOut from './../layouts/MypageEntLayOut';
+import MypageEntLayOut from './../layouts/MypageEntLayout';
 import WithdrawSuccess from '../pages/members/withdraw/WithdrawSuccess';
 import EditEntMemberInfo from './../pages/mypage/ent-member/EditEntMemberInfo';
 import MyProduct from './../pages/mypage/ent-member/MyProduct';
 import PaymentHistory from '../pages/mypage/ent-member/PaymentHistory';
-import MyJobSearchList from '../components/mypage/jobSearch/MyJobSearchList';
+import MyJobSearch from '../pages/mypage/jobSearch/MyJobSearch';
+import AddJobSearch from '../pages/mypage/jobSearch/RegistJobSearch';
+import MyJobSearchDetails from '../pages/mypage/jobSearch/MyJobSearchDetails';
 
 export default function MypageRoute() {
   return (
@@ -27,7 +29,10 @@ export default function MypageRoute() {
         <Route path='edit-company-info' element={<EditCompanyInfo />} />
         <Route path='my-product' element={<MyProduct />} />
         <Route path='payment' element={<PaymentHistory />} />
-        <Route path='jobsearch' element={<MyJobSearchList />} />
+        <Route path='jobsearch' element={<MyJobSearch />} />
+        <Route path='regist-jobsearch' element={<AddJobSearch />} />
+        <Route path='details-jobsearch' element={<MyJobSearchDetails />} />
+        <Route path='payment-history' element={<PaymentHistory />} />
       </Route>
       {/* <Route index element={<MyPageLayout />} /> */}
       <Route path='' element={<MypageLayout />}>

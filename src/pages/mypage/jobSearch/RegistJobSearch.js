@@ -13,8 +13,24 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import dayjs from 'dayjs';
+import {DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
+import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
+import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
 
-export default function AddJobSearch() {
+export default function RegistJobSearch() {
+  /* datepicker */
+  const [beginDay, setBeginDay] = React.useState(dayjs('2014-08-18T21:11:54'));
+
+  const handleChangeBegin = (newValue) => {
+    setBeginDay(newValue);
+  };
+  const [endDay, setEndDay] = React.useState(dayjs('2014-08-18T21:11:54'));
+
+  const handleChangeEnd = (newValue) => {
+    setEndDay(newValue);
+  };
+
   /*SELECT*/
   const [career, setCareer] = React.useState('');
   const [salary, setSalary] = React.useState('');
@@ -56,8 +72,24 @@ export default function AddJobSearch() {
 
   return (
     <>
-      <Stack spacing={1} fullWidth>
+      <Stack spacing={1}>
         <h3>상세정보작성</h3>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DateTimePicker
+            label='모집 게시일'
+            value={beginDay}
+            onChange={handleChangeBegin}
+            renderInput={(params) => <TextField {...params} />}
+          />
+
+          <DateTimePicker
+            label='모집 마감일'
+            value={endDay}
+            onChange={handleChangeEnd}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        </LocalizationProvider>
+
         <Box sx={{minWidth: 120}}>
           <FormControl fullWidth>
             <InputLabel id='demo-simple-select-label'>경력</InputLabel>
@@ -152,6 +184,14 @@ export default function AddJobSearch() {
         <TextField
           fullWidth
           id='outlined-textarea'
+          label='근무지 위치'
+          placeholder='근무지의 주소를 입력해주세요'
+          multiline
+          minRows={1}
+        />
+        <TextField
+          fullWidth
+          id='outlined-textarea'
           label='복지사항'
           placeholder='복지사항을 입력해주세요.'
           multiline
@@ -199,15 +239,17 @@ export default function AddJobSearch() {
                 </DialogContentText>
               </DialogContent>
               <DialogActions>
-                <Button variant='contained' onClick={handleClose} >
+                <Button variant='contained' onClick={handleClose}>
                   예
                 </Button>
-                <Button variant='outlined' onClick={handleClose}>아니요</Button>
+                <Button variant='outlined' onClick={handleClose}>
+                  아니요
+                </Button>
               </DialogActions>
             </Dialog>
-            <Button variant='outlined' size='large'>
-            목록
-          </Button>
+            <Button variant='outlined' size='large' href='jobsearch'>
+              목록
+            </Button>
           </Box>
         </Box>
       </Box>

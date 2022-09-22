@@ -4,10 +4,9 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 
-export default function Tags({title,list}) {
+export default function Tags({title, list}) {
   return (
     <Stack spacing={3} fullwidth>
- 
       <Autocomplete
         multiple
         id='multipls-select'
@@ -16,17 +15,12 @@ export default function Tags({title,list}) {
         // defaultValue={[list[13]]}
         filterSelectedOptions
         renderInput={(params) => (
-          <TextField
-            {...params}
-            label={title}
-            placeholder={title}
-          />
+          <TextField {...params} label={title} placeholder={title} />
         )}
       />
     </Stack>
   );
 }
-
 
 // const list = [
 //   {title: 'java', year: 1994},
