@@ -15,6 +15,7 @@ import EditEntMemberInfo from './../pages/mypage/ent-member/EditEntMemberInfo';
 import MyProduct from './../pages/mypage/ent-member/MyProduct';
 import PaymentHistory from '../pages/mypage/ent-member/PaymentHistory';
 import MyJobSearchList from '../components/mypage/jobSearch/MyJobSearchList';
+import InterviewSuggestionDetails from '../pages/interview/member/InterviewSuggestionDetails';
 
 export default function MypageRoute() {
   return (
@@ -40,6 +41,10 @@ export default function MypageRoute() {
         <Route path='withdraw-success' element={<WithdrawSuccess />} />
       </Route>
       <Route path='*' element={<Error404 />} />
+      <Route
+        path='/suggestion-list/details/:companyCode'
+        element={<InterviewSuggestionDetails />}
+      />
     </Routes>
   );
 }
