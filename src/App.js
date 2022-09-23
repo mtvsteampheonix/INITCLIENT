@@ -15,6 +15,7 @@ import FaqRoute from './routes/FaqRoute';
 import PolicyRoute from './routes/PolicyRoute';
 import Error404 from './pages/errors/Error404';
 import ScrollToTop from './Scroll-to-top';
+import AdminRoute from './routes/AdminRoute';
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
             <Route path='faq/*' element={<FaqRoute />} />
 
             <Route path='policy/*' element={<PolicyRoute />} />
+
+            {/*2022.09.24 hoiae commit AdminRoute만들었습니다. */}
+            <Route path='admin/*' element={<AdminRoute />} />
 
             <Route path='*' element={<Error404 />} />
           </Route>
