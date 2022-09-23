@@ -16,6 +16,7 @@ import MyProduct from './../pages/mypage/ent-member/MyProduct';
 import PaymentHistory from '../pages/mypage/ent-member/PaymentHistory';
 import MyJobSearchList from '../components/mypage/jobSearch/MyJobSearchList';
 import InterviewSuggestionDetails from '../pages/interview/member/InterviewSuggestionDetails';
+import ApplyListDetails from '../pages/mypage/applyList/ApplyListDetails';
 
 export default function MypageRoute() {
   return (
@@ -35,7 +36,10 @@ export default function MypageRoute() {
         <Route index element={<MyPageIndex />} />
         <Route path='edit-profile' element={<EditMemberInfo />} />
         <Route path='my-profile' element={<MyProfile />} />
-        <Route path='apply-list' element={<ApplyHistory />} />
+        <Route path='apply-list'>
+          <Route index element={<ApplyHistory />} />
+          <Route path='details/:noticeCode' element={<ApplyListDetails />} />
+        </Route>
         <Route path='suggestion-list'>
           <Route index element={<InterviewHistory />} />
           <Route

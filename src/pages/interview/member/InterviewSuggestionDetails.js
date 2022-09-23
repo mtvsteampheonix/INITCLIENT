@@ -95,7 +95,7 @@ function InterviewSuggestionDetails() {
               multiline
               minRows={30}
               value={suggestionInfo.description}
-              sx={{width: '1200px'}}
+              fullWidth
             ></TextField>
           </Paper>
         </Grid>
