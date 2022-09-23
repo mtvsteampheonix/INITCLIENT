@@ -146,11 +146,11 @@ const rows = [
 export default function AdminJobSearchList() {
   const navigate = useNavigate();
 
+  /* datagrid param관련설정*/
   const getRowId = (params) => {
     console.log('클릭된 row의 id는' + params.id); //row클릭스 id를 반환
-    navigate(`details/${params.id}`)
-
-  }; 
+    navigate(`details/${params.id}`);
+  };
 
   const [selectionModel, setSelectionModel] = useState([]); //selectedbox가 체크된 row의 id를 저장하는 state
 

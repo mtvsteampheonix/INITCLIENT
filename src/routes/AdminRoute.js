@@ -7,7 +7,8 @@ export default function FaqRoute() {
     <Routes>
       {/* //이곳에 페이지 추가해주세요  */}
       <Route index element={<AdminJobSearch />} />
-      <Route path='jobsearch' element={<AdminJobSearch />} >
+      <Route path='jobsearch'  >
+        <Route index element={<AdminJobSearch />}/>
         <Route path='details/:id' element={<AdminJobSearchDetails/>}/>
       </Route>
 

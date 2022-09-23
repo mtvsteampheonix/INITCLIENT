@@ -48,7 +48,7 @@ function App() {
 
             <Route path='policy/*' element={<PolicyRoute />} />
 
-            {/*2022.09.24 hoiae commit AdminRoute만들었습니다. */}
+            {/*2022.09.24 관리자페이지어떻게 할지 몰라서 우선 AdminRoute만들어서 작업했습니다. wcs님*/}
             <Route path='admin/*' element={<AdminRoute />} />
 
             <Route path='*' element={<Error404 />} />

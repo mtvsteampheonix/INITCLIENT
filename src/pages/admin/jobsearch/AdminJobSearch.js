@@ -42,6 +42,11 @@ export default function AdminJobSearch() {
         <DialogContent>
           <DialogContentText id='alert-post-description'>
             선택한 구직공고를 정말 마감시키겠습니까?.
+            <br />
+            (남은 기간 만큼 잔여시간에 추가됩니다.)
+            <br />
+            <label>강제 마감 사유 입력 :</label>
+            <input type='text' id='unpostingReason' size={50} />
           </DialogContentText>
         </DialogContent>
         <DialogActions>
