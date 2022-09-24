@@ -89,17 +89,14 @@ function InterviewSuggestionDetails() {
             </Select>
           </FormControl>
         </Grid>
-
-        <Grid item xs={12}>
-          <Paper elevation={3} sx={{height: '550px'}}>
-            <Typography
-              fontSize='17px'
-              textAlign='left'
-              marginLeft='10px'
-              marginRight='10px'
-            >
-              {suggestionInfo.description}
-            </Typography>
+        <Grid item xs={12} marginBottom='20px'>
+          <Paper elevation={3}>
+            <TextField
+              multiline
+              minRows={30}
+              value={suggestionInfo.description}
+              fullWidth
+            ></TextField>
           </Paper>
         </Grid>
         <Grid item xs={12} align='right' marginBottom='30px'>
