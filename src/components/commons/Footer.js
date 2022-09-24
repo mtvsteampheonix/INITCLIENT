@@ -11,6 +11,7 @@ const StyledFooter = styled.footer`
   height: 400px;
   width: 100%;
   min-width: 800px;
+  margin-top: 50px;
 `;
 
 const StyledDetails = styled.div`
