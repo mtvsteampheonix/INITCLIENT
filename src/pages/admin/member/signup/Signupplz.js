@@ -14,7 +14,6 @@ import {
 } from '@mui/material';
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
-import {theme} from './../../../../theme';
 
 const columnHeaderlist = [
   {id: 'id', align: 'center', label: '아이디', minWidth: 100},
