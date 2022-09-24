@@ -13,6 +13,11 @@ import Qualification from '../../components/resume/Qualification';
 import SchoolAbility from '../../components/resume/SchoolAbility';
 import MainResume from '../../components/resume/MainResume';
 import {useForm} from 'react-hook-form';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +68,7 @@ export const FormContainer = styled.form`
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function AddStepDetail() {
+function ResumeEdit() {
   const navigate = useNavigate();
   const location = useLocation();
   const {register, handleSubmit, setValue} = useForm();
@@ -87,6 +92,18 @@ function AddStepDetail() {
   ];
 
   const selectedList = useSelector((state) => state.resumeSelectReducer);
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleCloseYesHandler = () => {
+    setOpen(false);
+  };
 
   return (
     <OutletContainer>
@@ -124,12 +141,37 @@ function AddStepDetail() {
         {selectedList.experience && <TrainingCareer />}
         {/* 보유 자격 면허 */}
         {selectedList.qualification && <Qualification />}
-        <Button variant='contained' size='large' type='submit'>
-          작성 완료
+        <Button
+          variant='contained'
+          size='large'
+          /* type='submit' */ onClick={handleClickOpen}
+        >
+          수정 완료
         </Button>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby='alert-dialog-title'
+          aria-describedby='alert-dialog-description'
+        >
+          <DialogTitle id='alert-dialog-title'>
+            {'수정하시겠습니까?'}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id='alert-dialog-description'>
+              해당 이력서 정보가 수정됩니다.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleCloseYesHandler}>예</Button>
+            <Button onClick={handleClose} autoFocus>
+              아니오
+            </Button>
+          </DialogActions>
+        </Dialog>
       </FormContainer>
     </OutletContainer>
   );
 }
 
-export default AddStepDetail;
+export default ResumeEdit;

@@ -1,6 +1,7 @@
 import * as React from 'react';
-import {DataGrid, GridToolbarQuickFilter} from '@mui/x-data-grid';
-import { Box } from '@mui/system';
+import {DataGrid} from '@mui/x-data-grid';
+import {Box} from '@mui/system';
+import {useNavigate} from 'react-router-dom';
 
 const columns = [
   {field: 'id', headerName: 'ID', width: 70},
@@ -23,6 +24,8 @@ const columns = [
   //   },
 ];
 
+const getRowId = (params) => params.id;
+
 const rows = [
   {id: 1, 기업명: '메타버스아카데미', 게시상태: 'Y'},
   {id: 2, 기업명: '메타버스아카데미', 게시상태: 'Y'},
@@ -32,20 +35,37 @@ const rows = [
   {id: 6, 기업명: '메타버스아카데미', 게시상태: 'Y'},
   {id: 7, 기업명: '메타버스아카데미', 게시상태: 'N'},
   {id: 8, 기업명: '메타버스아카데미', 게시상태: 'Y'},
-  {id: 9, 기업명: '메타버스아카데미', 게시상태: 'N'}
+  {id: 9, 기업명: '메타버스아카데미', 게시상태: 'N'},
+  {id: 10, 기업명: '메타버스아카데미', 게시상태: 'N'},
+  {id: 11, 기업명: '메타버스아카데미', 게시상태: 'N'},
+  {id: 12, 기업명: '메타버스아카데미', 게시상태: 'N'},
+  {id: 13, 기업명: '메타버스아카데미', 게시상태: 'N'},
+  {id: 14, 기업명: '메타버스아카데미', 게시상태: 'N'}
 ];
 
 export default function MyJobSearchList() {
+  const navigate = useNavigate();
+
+  const toDetails = () => {
+    navigate('../details-jobsearch');
+  };
+
+  // const selectedRowDelete = () =>{
+  //   console.log('selectedRowDelete test')
+  // }
   return (
     <>
-    
-      <Box style={{height: 400, width: '100%'}}>
+      <Box style={{width: '100%'}}>
         <DataGrid
+          //getRowId={}
+          onRowClick={toDetails} //row클릭시 이벤트발생시키는 prop
           rows={rows}
           columns={columns}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
-          checkboxSelection
+          autoHeight={true}
+          pageSize={10}
+          rowsPerPageOptions={[10]}
+          checkboxSelection // 체크박스가 필요한 경우에 사용할것.
+          //onSelectionModelChange={selectedRowDelete}//체크된상태다룰때
         />
       </Box>
     </>

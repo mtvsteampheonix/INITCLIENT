@@ -14,11 +14,13 @@ import CompanyRoute from './routes/CompanyRoute';
 import FaqRoute from './routes/FaqRoute';
 import PolicyRoute from './routes/PolicyRoute';
 import Error404 from './pages/errors/Error404';
+import ScrollToTop from './Scroll-to-top';
 
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Main />} />

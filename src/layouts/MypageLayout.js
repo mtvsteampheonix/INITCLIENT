@@ -144,7 +144,11 @@ export default function MypageLayout() {
         <List>
           {navTitleList.map((title, index) => (
             <ListItem key={index} disablePadding>
-              <ListItemButton component={Link} to={navLinkList[index]}>
+              <ListItemButton
+                component={Link}
+                to={navLinkList[index]}
+                onClick={handleDrawerToggle}
+              >
                 <ListItemIcon>{navIconList[index]}</ListItemIcon>
                 <ListItemText primary={title} />
               </ListItemButton>
