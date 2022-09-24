@@ -4,6 +4,7 @@ import AdminJobSearchDetails from '../pages/admin/jobsearch/AdminJobSearchDetail
 import Error404 from './../pages/errors/Error404';
 import Signupplz from './../pages/admin/member/signup/Signupplz';
 import AdminIndex from '../pages/admin/AdminIndex';
+import SignupplzDetails from '../pages/admin/member/signup/SignupplzDetails';
 export default function FaqRoute() {
   return (
     <Routes>
@@ -15,7 +16,10 @@ export default function FaqRoute() {
       </Route>
 
       <Route path='member'>
-        <Route index element={<Signupplz />} />
+        <Route path='signup-plz'>
+          <Route index element={<Signupplz />} />
+          <Route path=':singupNum' element={<SignupplzDetails />}></Route>
+        </Route>
       </Route>
       <Route path='*' element={<Error404 />} />
     </Routes>
