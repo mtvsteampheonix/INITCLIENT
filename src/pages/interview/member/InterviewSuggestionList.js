@@ -152,16 +152,7 @@ export function InterviewSuggestionList() {
       {/* 바디부분입니다. */}
       {companyList.map((companyInfo) => (
         <>
-          <Grid
-            container
-            paddingLeft={3}
-            paddingTop={1.5}
-            onClick={() => {
-              navigate(
-                '/mypage/suggestion-list/details/' + companyInfo.companyCode
-              );
-            }}
-          >
+          <Grid container paddingLeft={3} paddingTop={1.5}>
             <Grid item xs={0.5} paddingTop={1.5}>
               <Checkbox
                 onClick={handleToggle(companyInfo.companyCode)}
@@ -186,7 +177,15 @@ export function InterviewSuggestionList() {
                 </Box>
               </Grid>
             </Grid>
-            <Grid item xs={7.7}>
+            <Grid
+              item
+              xs={7.7}
+              onClick={() => {
+                navigate(
+                  '/mypage/suggestion-list/details/' + companyInfo.companyCode
+                );
+              }}
+            >
               <Grid container flexDirection='column'>
                 <Grid item>
                   <Typography variant='h4'>
