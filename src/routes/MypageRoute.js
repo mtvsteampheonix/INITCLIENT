@@ -20,6 +20,7 @@ import MyJobSearchDetails from '../pages/mypage/jobSearch/MyJobSearchDetails';
 import MyJobSearchList from '../components/mypage/jobSearch/MyJobSearchList';
 import InterviewSuggestionDetails from '../pages/interview/member/InterviewSuggestionDetails';
 import ApplyListDetails from '../pages/mypage/applyList/ApplyListDetails';
+import EntApplyList from '../pages/mypage/ent-applylist/EntApplyList';
 
 export default function MypageRoute() {
   return (
@@ -36,6 +37,7 @@ export default function MypageRoute() {
         <Route path='regist-jobsearch' element={<AddJobSearch />} />
         <Route path='details-jobsearch' element={<MyJobSearchDetails />} />
         <Route path='payment-history' element={<PaymentHistory />} />
+        <Route path='apply-list' element={<EntApplyList />} />
       </Route>
       {/* <Route index element={<MyPageLayout />} /> */}
       <Route path='' element={<MypageLayout />}>
