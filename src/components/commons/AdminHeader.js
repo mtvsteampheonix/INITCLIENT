@@ -49,7 +49,7 @@ export default function AdminHeader() {
                   <Link
                     key={menu.code}
                     to={`${menu.menuUrl}`}
-                    color='#fff'
+                    style={{color: 'white'}}
                     underline='none'
                     fontWeight='bold'
                   >
