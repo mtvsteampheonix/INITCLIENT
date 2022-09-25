@@ -1,14 +1,13 @@
 import {Outlet} from 'react-router-dom';
-import Header from '../components/commons/Header';
-import Footer from '../components/commons/Footer';
 import {Box, Container} from '@mui/material';
-import {Margin} from '@mui/icons-material';
+import NonMemberHeader from '../components/commons/NonMemberHeader';
+import CommonFooter from '../components/commons/footer/CommonFooter';
 
 function Layout() {
   return (
     <>
       <Box display='flex' minHeight='100vh' flexDirection='column'>
-        <Header />
+        <NonMemberHeader />
         <Container
           maxWidth='lg'
           disableGutters
@@ -16,7 +15,7 @@ function Layout() {
         >
           <Outlet />
         </Container>
-        <Footer />
+        <CommonFooter />
       </Box>
     </>
   );
