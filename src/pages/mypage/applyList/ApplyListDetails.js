@@ -14,6 +14,11 @@ const recruitDetails = {
   resumeImage: '/bommi.jpg',
   portfolio: '불사조',
   selfIntroductionQuestion: ['나의 성장과정', '입사포부', '나의 장점과 단점'],
+  answerList: [
+    '동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세',
+    '동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세',
+    '동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세'
+  ],
   process: '합격'
 };
 
@@ -54,15 +59,17 @@ function ApplyListDetails() {
           )}
           <Link sx={{textDecoration: 'none'}}></Link>
         </Grid>
-        <Grid item xs={9} textAlign='right'>
+        <Grid item xs={9} textAlign='right' marginBottom='-5px'>
           <img src={recruitDetails.companyImage} width='120px' height='120px' />
         </Grid>
       </Grid>
-      <Grid container marginBottom='40px' borderTop='2px solid #4199e1'>
+      <Grid container marginBottom='40px'>
         <Grid
           item
           xs={2.5}
-          sx={{backgroundColor: '#D5D5D5', borderRadius: '0 0 10px 0'}}
+          borderLeft='4px solid #4199e1'
+          sx={{borderRadius: '5px'}}
+          marginBottom='15px'
         >
           <Typography marginLeft='10px' fontSize='30px'>
             기업이름
@@ -73,11 +80,13 @@ function ApplyListDetails() {
             {recruitDetails.companyName}
           </Typography>
         </Grid>
-        <Grid item xs={12} borderBottom='1px solid #999999' />
+        <Grid item xs={12} />
         <Grid
           item
           xs={2.5}
-          sx={{backgroundColor: '#D5D5D5', borderRadius: '0 0 10px 0'}}
+          borderLeft='4px solid #4199e1'
+          sx={{borderRadius: '5px'}}
+          marginBottom='15px'
         >
           <Typography marginLeft='10px' fontSize='30px'>
             기업분류
@@ -88,11 +97,13 @@ function ApplyListDetails() {
             {recruitDetails.companyCategory}
           </Typography>
         </Grid>
-        <Grid item xs={12} borderBottom='1px solid #999999' />
+        <Grid item xs={12} />
         <Grid
           item
           xs={2.5}
-          sx={{backgroundColor: '#D5D5D5', borderRadius: '0 0 10px 0'}}
+          borderLeft='4px solid #4199e1'
+          sx={{borderRadius: '5px'}}
+          marginBottom='15px'
         >
           <Typography marginLeft='10px' fontSize='30px'>
             공고제목
@@ -103,11 +114,13 @@ function ApplyListDetails() {
             {recruitDetails.recruitTitle}
           </Typography>
         </Grid>
-        <Grid item xs={12} borderBottom='1px solid #999999' />
+        <Grid item xs={12} />
         <Grid
           item
           xs={2.5}
-          sx={{backgroundColor: '#D5D5D5', borderRadius: '0 0 10px 0'}}
+          borderLeft='4px solid #4199e1'
+          sx={{borderRadius: '5px'}}
+          marginBottom='15px'
         >
           <Typography marginLeft='10px' fontSize='30px'>
             홈페이지
@@ -118,31 +131,53 @@ function ApplyListDetails() {
             {recruitDetails.companyURL}
           </Typography>
         </Grid>
-        <Grid item xs={12} borderBottom='1px solid #999999' />
+        <Grid item xs={12} />
         <Grid
           item
           xs={2.5}
-          sx={{backgroundColor: '#D5D5D5', borderRadius: '0 0 10px 0'}}
+          borderLeft='4px solid #4199e1'
+          sx={{borderRadius: '5px'}}
+          marginBottom='15px'
         >
           <Typography marginLeft='10px' fontSize='30px'>
             자기소개서 항목
           </Typography>
         </Grid>
-        <Grid item xs={9.5}>
-          <Typography marginLeft='10px' fontSize='30px'>
-            {recruitDetails.companyName}
+        <Grid item xs={9.5} display='flex'>
+          <Typography
+            marginLeft='10px'
+            fontSize='30px'
+            onClick={() => {
+              alert(recruitDetails.answerList[0]);
+            }}
+          >
+            {recruitDetails.selfIntroductionQuestion[0]},{' '}
+          </Typography>
+          <Typography
+            marginLeft='10px'
+            fontSize='30px'
+            onClick={() => {
+              alert(recruitDetails.answerList[1]);
+            }}
+          >
+            {recruitDetails.selfIntroductionQuestion[1]},{' '}
+          </Typography>
+          <Typography
+            marginLeft='10px'
+            fontSize='30px'
+            onClick={() => {
+              alert(recruitDetails.answerList[2]);
+            }}
+          >
+            {recruitDetails.selfIntroductionQuestion[2]}
           </Typography>
         </Grid>
-        <Grid item xs={12} borderBottom='1px solid #999999' />
+        <Grid item xs={12} />
       </Grid>
 
-      <Grid container borderTop='2px solid #4199e1'>
+      <Grid container>
         <Grid item xs={3.1}>
-          <Typography
-            sx={{backgroundColor: '#D5D5D5', borderRadius: '0 0 10px 0'}}
-            marginLeft='0px'
-            fontSize='30px'
-          >
+          <Typography borderLeft='4px solid #4199e1' sx={{borderRadius: '5px'}}>
             <Typography marginLeft='10px' fontSize='30px'>
               지원 이력서
             </Typography>
@@ -170,13 +205,9 @@ function ApplyListDetails() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid xs={12} borderBottom='1px solid #999999' marginTop='20px' />
+        <Grid xs={12} marginTop='20px' />
         <Grid item xs={3.1}>
-          <Typography
-            sx={{backgroundColor: '#D5D5D5', borderRadius: '0 0 10px 0'}}
-            marginLeft='0px'
-            fontSize='30px'
-          >
+          <Typography borderLeft='4px solid #4199e1' sx={{borderRadius: '5px'}}>
             <Typography marginLeft='10px' fontSize='30px'>
               지원 포트폴리오
             </Typography>
@@ -197,14 +228,15 @@ function ApplyListDetails() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid xs={12} borderBottom='1px solid #999999' marginTop='20px' />
+        <Grid xs={12} marginTop='20px' />
         <Grid item xs={3.1}>
           <Typography
-            sx={{backgroundColor: '#D5D5D5', borderRadius: '0 0 10px 0'}}
             marginLeft='0px'
             fontSize='30px'
+            borderLeft='4px solid #4199e1'
+            sx={{borderRadius: '5px'}}
           >
-            <Typography marginLeft='10px' fontSize='30px'>
+            <Typography fontSize='30px' marginLeft='10px'>
               지원 일자
             </Typography>
           </Typography>
