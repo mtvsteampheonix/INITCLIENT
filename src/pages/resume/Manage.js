@@ -134,7 +134,7 @@ const ResumeCardDetailContainerText = styled.div`
 
 export function Manage() {
   const [open, setOpen] = React.useState(false);
-  const [resumeCount, setResumeCount] = React.useState(1);
+  const [resumeCount, setResumeCount] = React.useState(2);
   const navigate = useNavigate();
 
   const handleClickOpen = () => {
@@ -153,13 +153,25 @@ export function Manage() {
   const createResumeCard = (cardNumber, selectCategory) => {
     const resumeResult = [];
 
-    for (let i = resumeCount; i > 0; i--) {
+    for (let i = 1; i <= resumeCount; i++) {
       resumeResult.push(
         <ResumeCard>
           <ResumeCardContainer>
-            <ResumeCardText>예시 이력서 {i}</ResumeCardText>
+            <ResumeCardText
+              onClick={() => {
+                navigate('/resume/detail/' + i);
+              }}
+            >
+              예시 이력서 {i}
+            </ResumeCardText>
             <ResumeCardButtonContainer>
-              <StyledButton>수정하기</StyledButton>
+              <StyledButton
+                onClick={() => {
+                  navigate('/resume/edit/' + i);
+                }}
+              >
+                수정하기
+              </StyledButton>
               <div>
                 <StyledButton onClick={handleClickOpen}>삭제하기</StyledButton>
                 <Dialog
