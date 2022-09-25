@@ -12,6 +12,7 @@ import DaumPostcode from 'react-daum-postcode';
 import Modal from '@mui/material/Modal';
 import {useDispatch} from 'react-redux';
 import {RESUME_MAIN_FORM} from '../../modules/resume/resumeFormModule';
+import {useEffect} from 'react';
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -91,6 +92,7 @@ export const PersonalDetailContainer = styled.div`
   border-width: 3px 0px 3px 0px;
   border-style: solid;
   border-color: #000000;
+  margin-bottom: 30px;
 `;
 
 export const PersonalDetailImageContainer = styled.div`
@@ -579,7 +581,7 @@ export const CareerDetailContentTechCertificateImageUploader = styled.div`
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function MainResume({register, setValue}) {
+function MainResume({register, setValue, variable, isReadOnly}) {
   const [zipCode, setZipCode] = React.useState('');
   const [address, setAddress] = React.useState('');
   const [imgSrc, setImgSrc] = React.useState('');
@@ -624,11 +626,27 @@ function MainResume({register, setValue}) {
     setEmail(e.target.value);
   };
 
+  if (!variable) {
+    variable = {};
+  }
+
+  useEffect(() => {
+    setZipCode(variable.zipCode);
+    setAddress(variable.address);
+    setEmail(variable.emailBack);
+    setImgSrc(variable.imgSrc);
+  }, []);
+
   return (
     <>
       <ResumeTitleContainer>
         <ResumeTitleText>이력서 제목</ResumeTitleText>
-        <ResumeTitleTextBox {...register('title')}></ResumeTitleTextBox>
+        <ResumeTitleTextBox
+          style={{textAlign: 'center'}}
+          {...register('title')}
+          defaultValue={variable.title}
+          readOnly={isReadOnly}
+        ></ResumeTitleTextBox>
       </ResumeTitleContainer>
       <ResumeText>이 력 서</ResumeText>
       <PersonalDetailContainer>
@@ -672,12 +690,16 @@ function MainResume({register, setValue}) {
                 autoComplete='off'
               >
                 <TextField
-                  id='outlined-basic'
+                  id='name'
                   label='이름'
                   variant='outlined'
                   size='small'
                   placeholder='입력'
                   {...register('name')}
+                  defaultValue={variable.name}
+                  inputProps={{
+                    readOnly: isReadOnly
+                  }}
                 ></TextField>
               </Box>
             </PersonalDetailContentTextCard>
@@ -695,7 +717,11 @@ function MainResume({register, setValue}) {
                   // value={gender}
                   label='선택'
                   // onChange={onChangeGenderHandler}
+                  defaultValue={variable.gender}
                   {...register('gender')}
+                  inputProps={{
+                    readOnly: isReadOnly
+                  }}
                 >
                   <MenuItem value='M'>남</MenuItem>
                   <MenuItem value='W'>여</MenuItem>
@@ -723,6 +749,10 @@ function MainResume({register, setValue}) {
                   placeholder='입력'
                   type='date'
                   {...register('birthday')}
+                  defaultValue={variable.birthday}
+                  inputProps={{
+                    readOnly: isReadOnly
+                  }}
                 ></TextField>
               </Box>
             </PersonalDetailContentTextCard>
@@ -750,6 +780,9 @@ function MainResume({register, setValue}) {
                     size='small'
                     value={zipCode}
                     {...register('zipCode')}
+                    inputProps={{
+                      readOnly: isReadOnly
+                    }}
                   ></TextField>
                 </Box>
                 <Button variant='outlined' onClick={onToggleModal}>
@@ -801,6 +834,9 @@ function MainResume({register, setValue}) {
                     size='small'
                     value={address}
                     {...register('mainAddress')}
+                    inputProps={{
+                      readOnly: isReadOnly
+                    }}
                   ></TextField>
                 </Box>
               </PersonalDetailContentTextCard>
@@ -819,6 +855,10 @@ function MainResume({register, setValue}) {
                     variant='outlined'
                     size='small'
                     {...register('detailAddress')}
+                    defaultValue={variable.address2}
+                    inputProps={{
+                      readOnly: isReadOnly
+                    }}
                   ></TextField>
                 </Box>
                 <Box
@@ -835,6 +875,9 @@ function MainResume({register, setValue}) {
                     variant='outlined'
                     size='small'
                     {...register('alphaAddress')}
+                    inputProps={{
+                      readOnly: isReadOnly
+                    }}
                   ></TextField>
                 </Box>
               </PersonalDetailContentTextCard>
@@ -857,12 +900,16 @@ function MainResume({register, setValue}) {
                 autoComplete='off'
               >
                 <TextField
-                  id='outlined-basic'
+                  id='phone'
                   label='집 전화'
                   variant='outlined'
                   size='small'
                   placeholder='입력'
                   {...register('phone')}
+                  defaultValue={variable.phone}
+                  inputProps={{
+                    readOnly: isReadOnly
+                  }}
                 ></TextField>
               </Box>
             </PersonalDetailContentTextCard>
@@ -881,11 +928,15 @@ function MainResume({register, setValue}) {
                 autoComplete='off'
               >
                 <TextField
-                  id='outlined-basic'
+                  id='mobilePhone'
                   label='휴대 전화'
                   variant='outlined'
                   size='small'
                   {...register('mobilePhone')}
+                  defaultValue={variable.mobilePhone}
+                  inputProps={{
+                    readOnly: isReadOnly
+                  }}
                 ></TextField>
               </Box>
             </PersonalDetailContentTextCard>
@@ -906,12 +957,16 @@ function MainResume({register, setValue}) {
                 autoComplete='off'
               >
                 <TextField
-                  id='outlined-basic'
+                  id='email-front'
                   label='이메일'
                   variant='outlined'
                   size='small'
                   type='email'
                   {...register('emailFront')}
+                  defaultValue={variable.emailFront}
+                  inputProps={{
+                    readOnly: isReadOnly
+                  }}
                 ></TextField>
               </Box>
               @
@@ -924,12 +979,15 @@ function MainResume({register, setValue}) {
                 autoComplete='off'
               >
                 <TextField
-                  id='outlined-basic'
+                  id='email-back'
                   variant='outlined'
                   size='small'
                   value={email}
                   type='email'
                   onChange={(e) => setEmail(e.target.value)}
+                  inputProps={{
+                    readOnly: isReadOnly
+                  }}
                 ></TextField>
               </Box>
               <FormControl sx={{m: 1, minWidth: 200}} size='small'>
@@ -941,6 +999,9 @@ function MainResume({register, setValue}) {
                   value={email}
                   label='이메일 선택'
                   onChange={onChangeEmailHandler}
+                  inputProps={{
+                    readOnly: isReadOnly
+                  }}
                 >
                   <MenuItem value=''>직접 입력</MenuItem>
                   <MenuItem value='google.com'>google.com</MenuItem>
@@ -952,12 +1013,13 @@ function MainResume({register, setValue}) {
         </PersonalDetailContentContainer>
       </PersonalDetailContainer>
       <ImageIsOpenCheckBoxContainer>
-        <ImageIsOpenCheckBox>
-          <Checkbox {...register('isOpenedPhoto')}></Checkbox>
-          <ImageIsOpenCheckBoxText>사진 비공개</ImageIsOpenCheckBoxText>
-        </ImageIsOpenCheckBox>
+        {!isReadOnly && (
+          <ImageIsOpenCheckBox>
+            <Checkbox {...register('isOpenedPhoto')}></Checkbox>
+            <ImageIsOpenCheckBoxText>사진 비공개</ImageIsOpenCheckBoxText>
+          </ImageIsOpenCheckBox>
+        )}
       </ImageIsOpenCheckBoxContainer>
-      {/* </form> */}
     </>
   );
 }

@@ -115,7 +115,7 @@ function ResumeEdit() {
     address: '경기도 성남시 시흥로 123',
     address2: '메타버스 허브',
     phone: '02-1234-1234',
-    mobilPhone: '010-1234-1234',
+    mobilePhone: '010-1234-1234',
     emailFront: 'hoiae',
     emailBack: 'mtvs.com',
     imgSrc:
@@ -143,6 +143,7 @@ function ResumeEdit() {
           register={register}
           setValue={setValue}
           variable={variable}
+          isReadOnly={true}
         />
         {/* 학력사항 */}
         <SchoolAbility register={register} setValue={setValue} />
@@ -162,34 +163,45 @@ function ResumeEdit() {
         {selectedList.experience && <TrainingCareer />}
         {/* 보유 자격 면허 */}
         {selectedList.qualification && <Qualification />}
-        <Button
-          variant='contained'
-          size='large'
-          /* type='submit' */ onClick={handleClickOpen}
-        >
-          수정 완료
-        </Button>
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          aria-labelledby='alert-dialog-title'
-          aria-describedby='alert-dialog-description'
-        >
-          <DialogTitle id='alert-dialog-title'>
-            {'수정하시겠습니까?'}
-          </DialogTitle>
-          <DialogContent>
-            <DialogContentText id='alert-dialog-description'>
-              해당 이력서 정보가 수정됩니다.
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleCloseYesHandler}>예</Button>
-            <Button onClick={handleClose} autoFocus>
-              아니오
-            </Button>
-          </DialogActions>
-        </Dialog>
+        <div style={{display: 'flex', flexDirection: 'row', gap: '30px'}}>
+          <Button
+            variant='contained'
+            size='large'
+            /* type='submit' */ onClick={handleClickOpen}
+          >
+            삭제하기
+          </Button>
+          <Dialog
+            open={open}
+            onClose={handleClose}
+            aria-labelledby='alert-dialog-title'
+            aria-describedby='alert-dialog-description'
+          >
+            <DialogTitle id='alert-dialog-title'>
+              {'삭제하시겠습니까?'}
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText id='alert-dialog-description'>
+                해당 이력서 정보가 삭제됩니다.
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleCloseYesHandler}>예</Button>
+              <Button onClick={handleClose} autoFocus>
+                아니오
+              </Button>
+            </DialogActions>
+          </Dialog>
+          <Button
+            variant='contained'
+            size='large'
+            /* type='submit' */ onClick={() => {
+              navigate(-1);
+            }}
+          >
+            돌아가기
+          </Button>
+        </div>
       </FormContainer>
     </OutletContainer>
   );
