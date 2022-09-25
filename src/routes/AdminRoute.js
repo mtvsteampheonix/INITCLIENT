@@ -16,6 +16,7 @@ export default function FaqRoute() {
       </Route>
 
       <Route path='member'>
+        <Route index element={<Signupplz />} />
         <Route path='signup-plz'>
           <Route index element={<Signupplz />} />
           <Route path=':singupNum' element={<SignupplzDetails />}></Route>
