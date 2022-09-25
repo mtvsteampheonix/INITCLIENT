@@ -1,6 +1,9 @@
 import {createTheme} from '@mui/material/styles';
-
+import './utils/font.css';
 export const theme = createTheme({
+  typography: {
+    fontFamily: '"Jua", "sans-serif"'
+  },
   palette: {
     primary: {
       main: '#4199e1',
