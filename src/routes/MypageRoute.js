@@ -22,6 +22,7 @@ import InterviewSuggestionDetails from '../pages/interview/member/InterviewSugge
 import ApplyListDetails from '../pages/mypage/applyList/ApplyListDetails';
 import EntApplyList from '../pages/mypage/ent-applylist/EntApplyList';
 import EntApplyListDetails from '../pages/mypage/ent-applylist/EntApplyListDetails';
+import WriteProposal from '../pages/interview/ent-member/WriteProposal';
 
 export default function MypageRoute() {
   return (
@@ -41,6 +42,7 @@ export default function MypageRoute() {
         <Route path='apply-list'>
           <Route index element={<EntApplyList />} />
           <Route path='details/:resumeCode' element={<EntApplyListDetails />} />
+          <Route path='writeproposal/:resumeCode' element={<WriteProposal />} />
         </Route>
       </Route>
       {/* <Route index element={<MyPageLayout />} /> */}
