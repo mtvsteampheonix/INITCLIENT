@@ -19,8 +19,8 @@ const headerList = [
 const footerList = [
   <CommonFooter />,
   <CommonFooter />,
-  <CompanyFooter />,
-  <CommonFooter />
+  <CommonFooter />,
+  <CompanyFooter />
 ];
 
 function TempLayout() {
@@ -33,7 +33,10 @@ function TempLayout() {
         <Container
           maxWidth='lg'
           disableGutters
-          sx={{minWidth: '400px', flex: 1}}
+          sx={{
+            minWidth: '400px',
+            flex: 1
+          }}
         >
           <Outlet />
         </Container>
