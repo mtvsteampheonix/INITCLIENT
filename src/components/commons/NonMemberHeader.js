@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import {
   Avatar,
   Box,
@@ -5,16 +6,15 @@ import {
   Container,
   Divider,
   Grid,
-  Link,
   Typography
 } from '@mui/material';
 
 const menuList = [
   {code: 1, menuName: '채용공고', menuUrl: '/jobsearch'},
-  {code: 2, menuName: '기업조회', menuUrl: '/product'},
-  {code: 3, menuName: '커리어', menuUrl: '/scout'},
-  {code: 4, menuName: '프로필 관리', menuUrl: '/mypage/ent'},
-  {code: 5, menuName: '마이페이지', menuUrl: '/mypage'}
+  {code: 2, menuName: '기업조회', menuUrl: '/member/login'},
+  {code: 3, menuName: '커리어', menuUrl: '/member/login'},
+  {code: 4, menuName: '프로필 관리', menuUrl: '/member/login'},
+  {code: 5, menuName: '마이페이지', menuUrl: '/member/login'}
 ];
 
 export default function NonMemberHeader() {
@@ -29,7 +29,7 @@ export default function NonMemberHeader() {
               display='flex'
               alignItems='center'
               component={Link}
-              href='/'
+              to='/'
               underline='none'
             >
               <Avatar
@@ -54,7 +54,7 @@ export default function NonMemberHeader() {
                 <>
                   <Link
                     key={menu.code}
-                    href={`${menu.menuUrl}`}
+                    to={`${menu.menuUrl}`}
                     underline='none'
                     fontWeight='bold'
                   >
@@ -66,7 +66,7 @@ export default function NonMemberHeader() {
             <Grid item xs={12} sm='auto' display='flex' alignItems='center'>
               <Button
                 component={Link}
-                href='/member/login'
+                to='/member/login'
                 variant='contained'
                 size='large'
               >

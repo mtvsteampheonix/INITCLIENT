@@ -16,11 +16,8 @@ import PolicyRoute from './routes/PolicyRoute';
 import Error404 from './pages/errors/Error404';
 import ScrollToTop from './Scroll-to-top';
 import AdminRoute from './routes/AdminRoute';
-import AdminHeader from './components/commons/AdminHeader';
-import CompanyHeader from './components/commons/CompanyHeader';
 import ScoutRoute from './routes/ScoutRoute';
-import PersonalHeader from './components/commons/PersonalHeader';
-import NonMemberHeader from './components/commons/NonMemberHeader';
+import TempLayout from './layouts/TempLayout';
 
 function App() {
   return (
@@ -28,7 +25,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path='/' element={<Layout />}>
+          <Route path='/' element={<TempLayout />}>
             <Route index element={<Main />} />
 
             <Route path='resume/*' element={<ResumeRoute />} />
