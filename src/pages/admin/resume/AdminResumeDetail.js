@@ -13,52 +13,12 @@ import Qualification from '../../../components/resume/Qualification';
 import SchoolAbility from '../../../components/resume/SchoolAbility';
 import MainResume from '../../../components/resume/MainResume';
 import {useForm} from 'react-hook-form';
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-export const OutletContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 96px;
-  margin-top: 96px;
-  gap: 30px;
-
-  width: 100%;
-  min-width: 1200px;
-`;
-
-export const BackButtonContainter = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  width: 100%;
-  max-width: 1200px;
-  height: 50px;
-`;
-
-export const StyledButton = styled.button`
-  width: 123.29px;
-  height: 48px;
-  background: #4199e1;
-  border-radius: 5px;
-  color: white;
-  border-color: #4199e1;
-`;
-
-export const FormContainer = styled.form`
-  width: 100%;
-  max-width: 1200px;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
+import {
+  OutletContainer,
+  BackButtonContainter,
+  StyledButton,
+  FormContainer
+} from '../../../pages/resume/AddStepDetail';
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////

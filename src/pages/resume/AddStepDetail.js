@@ -124,7 +124,14 @@ function AddStepDetail() {
         {selectedList.experience && <TrainingCareer />}
         {/* 보유 자격 면허 */}
         {selectedList.qualification && <Qualification />}
-        <Button variant='contained' size='large' type='submit'>
+        <Button
+          variant='contained'
+          size='large'
+          type='submit'
+          onClick={() => {
+            navigate('/resume');
+          }}
+        >
           작성 완료
         </Button>
       </FormContainer>

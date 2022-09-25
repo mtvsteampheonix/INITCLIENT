@@ -18,7 +18,6 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
 const HeaderText = styled.div`
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
   font-size: 24px;

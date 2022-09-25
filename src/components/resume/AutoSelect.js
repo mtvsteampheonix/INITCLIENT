@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import styled from 'styled-components';
 
 const TitleText = styled.div`
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
