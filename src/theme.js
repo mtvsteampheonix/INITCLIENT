@@ -1,8 +1,8 @@
 import {createTheme} from '@mui/material/styles';
-import './utils/font.css';
+
 export const theme = createTheme({
   typography: {
-    fontFamily: '"Jua", "sans-serif"'
+    fontFamily: '"Do Hyeon", "sans-serif"'
   },
   palette: {
     primary: {

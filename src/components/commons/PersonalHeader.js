@@ -1,12 +1,6 @@
-import {
-  Avatar,
-  Box,
-  Container,
-  Divider,
-  Grid,
-  Link,
-  Typography
-} from '@mui/material';
+import {Link} from 'react-router-dom';
+import {Avatar, Box, Container, Divider, Grid, Typography} from '@mui/material';
+import LogoutButton from './LogoutButton';
 
 const menuList = [
   {code: 1, menuName: '채용공고', menuUrl: '/jobsearch'},
@@ -28,7 +22,7 @@ export default function PersonalHeader() {
               display='flex'
               alignItems='center'
               component={Link}
-              href='/'
+              to='/'
               underline='none'
             >
               <Avatar
@@ -54,7 +48,7 @@ export default function PersonalHeader() {
                 <>
                   <Link
                     key={menu.code}
-                    href={`${menu.menuUrl}`}
+                    to={`${menu.menuUrl}`}
                     underline='none'
                     fontWeight='bold'
                   >
@@ -71,6 +65,7 @@ export default function PersonalHeader() {
                 </Typography>
                 님
               </Typography>
+              <LogoutButton />
             </Grid>
           </Grid>
         </Container>

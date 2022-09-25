@@ -1,12 +1,6 @@
-import {
-  Avatar,
-  Box,
-  Container,
-  Divider,
-  Grid,
-  Link,
-  Typography
-} from '@mui/material';
+import {Link} from 'react-router-dom';
+import {Avatar, Box, Container, Divider, Grid, Typography} from '@mui/material';
+import LogoutButton from './LogoutButton';
 
 const menuList = [
   {code: 1, menuName: '개인 회원 관리', menuUrl: '/admin/member'},
@@ -26,7 +20,7 @@ export default function AdminHeader() {
               display='flex'
               alignItems='center'
               component={Link}
-              href='/'
+              to='/'
               underline='none'
             >
               <Avatar
@@ -54,7 +48,7 @@ export default function AdminHeader() {
                 <>
                   <Link
                     key={menu.code}
-                    href={`${menu.menuUrl}`}
+                    to={`${menu.menuUrl}`}
                     color='#fff'
                     underline='none'
                     fontWeight='bold'
@@ -72,6 +66,7 @@ export default function AdminHeader() {
                 </Typography>
                 님
               </Typography>
+              <LogoutButton />
             </Grid>
           </Grid>
         </Container>
