@@ -4,7 +4,7 @@ import LogoutButton from './LogoutButton';
 
 const menuList = [
   {code: 1, menuName: '채용공고', menuUrl: '/jobsearch'},
-  {code: 2, menuName: '기업조회', menuUrl: '/product'},
+  {code: 2, menuName: '기업조회', menuUrl: '/company'},
   {code: 3, menuName: '커리어', menuUrl: '/scout'},
   {code: 4, menuName: '프로필 관리', menuUrl: '/mypage/ent'},
   {code: 5, menuName: '마이페이지', menuUrl: '/mypage'}
