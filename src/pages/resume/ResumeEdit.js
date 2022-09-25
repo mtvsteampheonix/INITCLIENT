@@ -103,6 +103,7 @@ function ResumeEdit() {
 
   const handleCloseYesHandler = () => {
     setOpen(false);
+    navigate('/resume');
   };
 
   // DB 대체

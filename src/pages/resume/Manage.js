@@ -45,7 +45,7 @@ const ResumeContainer = styled.div`
   height: 72px;
 `;
 const ResumeHeaderText = styled.div`
-  font-family: 'Inder';
+  // font-family: 'Inder';
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
@@ -98,7 +98,7 @@ const ResumeCardContainer = styled.div`
 `;
 
 const ResumeCardText = styled.div`
-  font-family: 'Inder';
+  // font-family: 'Inder';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -125,7 +125,7 @@ const ResumeCardDetailContainer = styled.div`
 
 const ResumeCardDetailContainerText = styled.div`
   height: 16px;
-  font-family: 'Inder';
+  // font-family: 'Inder';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

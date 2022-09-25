@@ -39,7 +39,7 @@ export const ResumeTitleContainer = styled.div`
 `;
 
 export const ResumeTitleText = styled.div`
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
@@ -51,7 +51,7 @@ export const ResumeTitleTextBox = styled.input`
   max-width: 1185px;
   height: 100px;
 
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -66,7 +66,7 @@ export const ResumeText = styled.div`
   max-width: 285px;
   height: 77px;
 
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 64px;
@@ -178,7 +178,7 @@ export const PersonalDetailContentTextCardLast = styled.div`
 
 export const PersonalDetailContentTextCardText = styled.div`
   height: 47px;
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -206,7 +206,7 @@ export const PersonalDetailContentTextBox2 = styled.div`
 export const AddressText = styled.div`
   width: 100px;
   height: 47px;
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -240,7 +240,7 @@ export const ImageIsOpenCheckBox = styled.div`
 `;
 
 export const ImageIsOpenCheckBoxText = styled.div`
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -281,7 +281,7 @@ export const SchoolMenuBar = styled.div`
   height: 61px;
 
   border-bottom: 2px solid #000000;
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -300,7 +300,7 @@ export const CareerMenuBar = styled.div`
   height: 61px;
 
   border-bottom: 2px solid #000000;
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -368,7 +368,7 @@ export const CareerDelete = styled.div`
 `;
 
 export const SchoolMenuBarName = styled.div`
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -379,7 +379,7 @@ export const SchoolMenuBarName = styled.div`
 `;
 
 export const SchoolMenuBarPeriod = styled.div`
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -390,7 +390,7 @@ export const SchoolMenuBarPeriod = styled.div`
 `;
 
 export const SchoolMenuBarMajor = styled.div`
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -401,7 +401,7 @@ export const SchoolMenuBarMajor = styled.div`
 `;
 
 export const SchoolMenuBarScore = styled.div`
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -412,7 +412,7 @@ export const SchoolMenuBarScore = styled.div`
 `;
 
 export const SchoolMenuBarStatus = styled.div`
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -423,7 +423,7 @@ export const SchoolMenuBarStatus = styled.div`
 `;
 
 export const SchoolMenuBarDelete = styled.div`
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -527,7 +527,7 @@ export const CareerDetailContentPositionText = styled.div`
   width: 150px;
   height: 19px;
 
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -545,7 +545,7 @@ export const CareerDetailContentPositionTextBox = styled.textarea`
   background: #f0f0f0;
   border-radius: 5px;
 
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -556,7 +556,7 @@ export const CareerDetailContentTechCertificateContainer = styled.div`
   margin-top: 30px;
   width: 100%;
   max-width: 1170px;
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

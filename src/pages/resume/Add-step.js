@@ -42,7 +42,7 @@ const AddMainContainer = styled.form`
 
 const AddHeaderText = styled.div`
   width: 100%;
-  font-family: 'Inder';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -51,7 +51,7 @@ const AddHeaderText = styled.div`
 
 const AddHeaderSelectText = styled.div`
   width: 100%;
-  font-family: 'Inder';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -74,7 +74,7 @@ const AddBox = styled.div`
 `;
 
 const AddBoxText = styled.div`
-  font-family: 'Inder';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -98,7 +98,7 @@ const SelectCategoryTextBox = styled.div`
 `;
 const SelectCategoryTextBoxBasix = styled.div`
   height: 18px;
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -147,7 +147,7 @@ const SelectCategoryContentContainerCard = styled.div`
 `;
 
 const CardText = styled.div`
-  font-family: 'Inter';
+  // font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
