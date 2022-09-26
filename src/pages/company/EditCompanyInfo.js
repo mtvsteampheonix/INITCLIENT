@@ -23,7 +23,7 @@ import {Typography} from '@mui/material';
 function EditCompanyInfo() {
   return (
     <div>
-      <h1> 하이루 베이비들// mypage/company화면이다 칭기야 ! </h1>
+      {/* <h1> 하이루 베이비들// mypage/company화면이다 칭기야 ! </h1> */}
 
       <Box sx={{width: '100%', border: '1px solid'}}>
         <Grid container rowSpacing={1} columnSpacing={{xs: 1, sm: 2, md: 3}}>

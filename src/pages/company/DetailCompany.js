@@ -30,7 +30,7 @@ const Item = styled(Paper)(({theme}) => ({
 function DetailCompany() {
   return (
     <div>
-      <h1> 하이루 베이비들// detail화면이다 칭기야 ! </h1>
+      {/* <h1> 하이루 베이비들// detail화면이다 칭기야 ! </h1> */}
       {/* {' '}
       <h1> 하이루 베이비들22222222222 </h1>
       <br></br>
