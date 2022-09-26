@@ -10,6 +10,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import {Link} from 'react-router-dom';
 
 const Item = styled(Paper)(({theme}) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -83,7 +84,12 @@ export default function AdminJobSearchDetails() {
         <Button variant='contained' size='large' onClick={handleClickOpenPost}>
           마감
         </Button>
-        <Button variant='outlined' size='large' href='/admin/jobsearch'>
+        <Button
+          component={Link}
+          variant='outlined'
+          size='large'
+          to='/admin/jobsearch'
+        >
           목록
         </Button>
       </div>
