@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from '@mui/material/button';
+import {useNavigate} from 'react-router-dom';
 
 const ApplyPageHeaderComponent = styled.nav`
   display: flex;
@@ -22,21 +23,32 @@ const Title = styled.span`
 `;
 
 function ApplyPageHeader() {
+  const navigate = useNavigate();
   return (
     <>
       <ApplyPageHeaderComponent>
         <Title>지원서 작성</Title>
         <ButtonGroup>
-          <Button style={{width: '130px', height: '40px'}} variant='outlined'>
+          <Button
+            href='/jobsearch'
+            style={{width: '130px', height: '40px'}}
+            variant='outlined'
+          >
             목록
           </Button>
-          <Button style={{width: '130px', height: '40px'}} variant='outlined'>
-            이전
-          </Button>
-          <Button style={{width: '130px', height: '40px'}} variant='outlined'>
-            다음
-          </Button>
-          <Button style={{width: '130px', height: '40px'}} variant='outlined'>
+          <Button
+            onClick={() => {
+              const checkResume = window.confirm('작성을 완료하시겠습니까?');
+              if (checkResume) {
+                alert('작성 완료 되었습니다');
+                navigate('/jobsearch');
+              } else {
+                return;
+              }
+            }}
+            style={{width: '130px', height: '40px'}}
+            variant='outlined'
+          >
             작성완료
           </Button>
         </ButtonGroup>

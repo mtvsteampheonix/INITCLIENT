@@ -63,7 +63,9 @@ function Details() {
         <h3>기업소개글</h3>
       </div>
       <div style={{textAlign: 'center', margin: 10}}>
-        <Button variant='contained'>지원하기</Button>
+        <Button variant='contained' href='/recruit/apply'>
+          지원하기
+        </Button>
         <Button variant='outlined'>목록</Button>
       </div>
     </Container>
