@@ -66,7 +66,13 @@ export default function SignupplzDetails() {
   }, []);
   return (
     <>
-      <Box maxWidth='800px' marginLeft='auto' marginRight='auto' marginTop={5}>
+      <Box
+        maxWidth='800px'
+        marginLeft='auto'
+        marginRight='auto'
+        marginTop={5}
+        marginBottom={5}
+      >
         <Stack spacing={5}>
           <Typography align='center' variant='h4'>
             기업 회원 가입 요청
