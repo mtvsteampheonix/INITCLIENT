@@ -18,7 +18,7 @@ import {MobileDatePicker} from '@mui/x-date-pickers/MobileDatePicker';
 import TextField from '@mui/material/TextField';
 import {Stack} from '@mui/system';
 import {Typography} from '@mui/material';
-
+import {Link} from 'react-router-dom';
 export default function MyJobSearch() {
   /*게시 alert*/
   const [openPost, setOpenPost] = React.useState(false);
@@ -33,12 +33,16 @@ export default function MyJobSearch() {
 
   /*게시일 선택 date picker*/
   /* datepicker */
-  const [PostbeginDay, setPostBeginDay] = React.useState(dayjs('2014-08-18T21:11:54'));
+  const [PostbeginDay, setPostBeginDay] = React.useState(
+    dayjs('2014-08-18T21:11:54')
+  );
 
   const handleChangePostBegin = (newValue) => {
     setPostBeginDay(newValue);
   };
-  const [PostendDay, setPostEndDay] = React.useState(dayjs('2014-08-18T21:11:54'));
+  const [PostendDay, setPostEndDay] = React.useState(
+    dayjs('2014-08-18T21:11:54')
+  );
 
   const handleChangePostEnd = (newValue) => {
     setPostEndDay(newValue);
@@ -49,7 +53,7 @@ export default function MyJobSearch() {
       <Typography variant='h4'>MY구직공고</Typography>
       <MyJobSearchList />
       <Box style={{display: 'flex', justifyContent: 'center'}}>
-        <Button variant='contained' size='large' href='regist-jobsearch'>
+        <Button component={Link} size='large' to='../regist-jobsearch' variant='outlined'>
           작성
         </Button>
         <Button
@@ -59,6 +63,14 @@ export default function MyJobSearch() {
           onClick={handleClickOpenPost}
         >
           게시
+        </Button>
+        <Button
+          component={Link}
+          variant='outlined'
+          size='large'
+          to='../apply-list'
+        >
+          관리
         </Button>
       </Box>
 
