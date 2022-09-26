@@ -19,7 +19,7 @@ export default function FaqRoute() {
 
       <Route path='member'>
         <Route index element={<Signupplz />} />
-        <Route path='signup-plz'>
+        <Route path=''>
           <Route index element={<Signupplz />} />
           <Route path=':singupNum' element={<SignupplzDetails />}></Route>
         </Route>
