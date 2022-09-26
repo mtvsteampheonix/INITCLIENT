@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
 import Button from '@mui/material/Button';
+import {Link} from 'react-router-dom';
 
 const Item = styled(Paper)(({theme}) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -63,7 +64,7 @@ function Details() {
         <h3>기업소개글</h3>
       </div>
       <div style={{textAlign: 'center', margin: 10}}>
-        <Button variant='contained' href='/recruit/apply'>
+        <Button component={Link} variant='contained' to='/recruit/apply'>
           지원하기
         </Button>
         <Button variant='outlined'>목록</Button>
