@@ -120,6 +120,15 @@ function InterviewSuggestionDetails() {
                 marginLeft: '20px'
               }}
               variant='outlined'
+              onClick={() => {
+                const responseOffer = window.confirm('승인 하시겠습니까?');
+                if (responseOffer) {
+                  alert('승인 완료되었습니다.');
+                  navigate('/mypage/suggestion-list');
+                } else {
+                  return;
+                }
+              }}
             >
               승인
             </Button>
@@ -132,6 +141,15 @@ function InterviewSuggestionDetails() {
               }}
               variant='outlined'
               color='error'
+              onClick={() => {
+                const responseOffer = window.confirm('거절 하시겠습니까?');
+                if (responseOffer) {
+                  alert('거절 완료되었습니다.');
+                  navigate('/mypage/suggestion-list');
+                } else {
+                  return;
+                }
+              }}
             >
               거절
             </Button>

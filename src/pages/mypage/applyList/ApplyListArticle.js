@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import * as React from 'react';
 import Checkbox from '@mui/material/Checkbox';
-
+import {useNavigate} from 'react-router-dom';
 import Button from '@mui/material/button';
 import {Typography, Box, Grid} from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
@@ -31,6 +31,7 @@ const RecruitContent = styled.div`
 `;
 
 function ApplyListArticle() {
+  const navigate = useNavigate();
   const [page, setPage] = React.useState(1);
   const handleChange = (event, value) => {
     setPage(value);
@@ -123,7 +124,15 @@ function ApplyListArticle() {
                 </Box>
               </Grid>
             </Grid>
-            <Grid item xs={7.7}>
+            <Grid
+              item
+              xs={7.7}
+              onClick={() => {
+                navigate(
+                  '/mypage/apply-list/details/' + companyInfo.companyCode
+                );
+              }}
+            >
               <Grid container flexDirection='column'>
                 <Grid item>
                   <Typography variant='h4'>
