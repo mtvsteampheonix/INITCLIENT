@@ -112,7 +112,7 @@ export default function AddJobSearch() {
 
   return (
     <>
-      <Typography variant='h4'>MY구직공고 작성</Typography>
+      <Typography variant='h4'>MY구직공고수정</Typography>
       <Stack spacing={1}>
         <Typography variant='h7' fontWeight='bold'>
           상세정보작성
@@ -262,6 +262,34 @@ export default function AddJobSearch() {
           minRows={8}
           InputProps={{sx: {height: '200px'}}}
           defaultValue='기존 내용을 출력합니다.'
+        />
+
+      <h3>자기소개서 항목</h3>
+        <TextField
+          fullWidth
+          margin='dense'
+          id='firstQuestion'
+          label='자기소개서 1번 문항'
+          defaultValue='기존 문항을 출력합니다.'
+          placeholder='자기소개서 1번 문항을 입력해주세요.'
+        />
+
+        <TextField
+          fullWidth
+          margin='dense'
+          id='secondQuestion'
+          label='자기소개서 2번 문항'
+          defaultValue='기존 문항을 출력합니다.'
+          placeholder='자기소개서 2번 문항을 입력해주세요.'
+        />
+
+        <TextField
+          fullWidth
+          margin='dense'
+          id='thirdQuestion'
+          defaultValue='기존 문항을 출력합니다.'
+          label='자기소개서 3번 문항'
+          placeholder='자기소개서 3번 문항을 입력해주세요.'
         />
 
         {/* 화면 하단 버튼 설정 */}
