@@ -219,6 +219,32 @@ export default function RegistJobSearch() {
           minRows={8}
           InputProps={{sx: {height: '200px'}}}
         />
+
+        <h3>자기소개서 항목</h3>
+        <TextField
+          fullWidth
+          margin='dense'
+          id='firstQuestion'
+          label='자기소개서 1번 문항'
+          placeholder='자기소개서 1번 문항을 입력해주세요.'
+        />
+
+        <TextField
+          fullWidth
+          margin='dense'
+          id='secondQuestion'
+          label='자기소개서 2번 문항'
+          placeholder='자기소개서 2번 문항을 입력해주세요.'
+        />
+
+        <TextField
+          fullWidth
+          margin='dense'
+          id='thirdQuestion'
+          label='자기소개서 3번 문항'
+          placeholder='자기소개서 3번 문항을 입력해주세요.'
+        />
+
         <Box style={{textAlign: 'center'}}>
           <Box>
             <Button variant='contained' size='large' onClick={handleClickOpen}>

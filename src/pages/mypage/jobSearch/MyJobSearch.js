@@ -31,6 +31,18 @@ export default function MyJobSearch() {
     setOpenPost(false);
   };
 
+    /*DIALOGALERT 삭제*/
+
+    const [openDelete, setOpenDelete] = React.useState(false);
+
+    const handleClickOpenDelete = () => {
+      setOpenDelete(true);
+    };
+  
+    const handleCloseDelete = () => {
+      setOpenDelete(false);
+    };
+
   /*게시일 선택 date picker*/
   /* datepicker */
   const [PostbeginDay, setPostBeginDay] = React.useState(
@@ -53,7 +65,7 @@ export default function MyJobSearch() {
       <Typography variant='h4'>MY구직공고</Typography>
       <MyJobSearchList />
       <Box style={{display: 'flex', justifyContent: 'center'}}>
-        <Button component={Link} size='large' to='../regist-jobsearch' variant='outlined'>
+        <Button component={Link} size='large' to='../regist-jobsearch' variant='contained'>
           작성
         </Button>
         <Button
@@ -64,6 +76,14 @@ export default function MyJobSearch() {
         >
           게시
         </Button>
+        <Button
+            variant='contained'
+            size='large'
+            onClick={handleClickOpenDelete}
+            color='error'
+          >
+            삭제
+          </Button>
         <Button
           component={Link}
           variant='outlined'
@@ -117,6 +137,34 @@ export default function MyJobSearch() {
           </Button>
         </DialogActions>
       </Dialog>
+
+
+      {/* Dialog 삭제 */}
+
+      <Dialog
+          open={openDelete}
+          onClose={handleCloseDelete}
+          aria-labelledby='alert-delete-title'
+          aria-describedby='alert-delete-description'
+        >
+          <DialogTitle id='alert-delete-title'>
+            {'구직공고작성'} {/*팝업창 메인에 출력할 문구*/}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id='alert-delete-description'>
+              구직공고게시글을 삭제하시겠습니까?
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button variant='contained' onClick={handleCloseDelete}>
+              예
+            </Button>
+            <Button variant='outlined' onClick={handleCloseDelete}>
+              아니요
+            </Button>
+          </DialogActions>
+        </Dialog>
+     
     </Box>
   );
 }
