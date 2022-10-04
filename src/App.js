@@ -14,10 +14,9 @@ import CompanyRoute from './routes/CompanyRoute';
 import FaqRoute from './routes/FaqRoute';
 import PolicyRoute from './routes/PolicyRoute';
 import Error404 from './pages/errors/Error404';
-import ScrollToTop from './Scroll-to-top';
 import AdminRoute from './routes/AdminRoute';
 import ScoutRoute from './routes/ScoutRoute';
-import TempLayout from './layouts/TempLayout';
+import ScrollToTop from './utils/commons/Scroll-to-top';
 
 function App() {
   return (
@@ -25,7 +24,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path='/' element={<TempLayout />}>
+          <Route path='/' element={<Layout />}>
             <Route index element={<Main />} />
 
             <Route path='resume/*' element={<ResumeRoute />} />
