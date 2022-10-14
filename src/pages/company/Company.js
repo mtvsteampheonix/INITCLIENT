@@ -128,7 +128,7 @@ function Company() {
         <Grid container rowSpacing={1} columnSpacing={{xs: 1, sm: 2, md: 3}}>
           <Grid xs={6}>
             <Item>
-              사과는 애플
+              손창우씨 짐좀 내려놔 멋 짐
               <IconButton color='primary' onClick={handleChangeBookmark}>
                 {isBookmark ? <StarIcon /> : <StarBorderIcon />}
               </IconButton>
@@ -136,7 +136,7 @@ function Company() {
           </Grid>
           <Grid xs={6}>
             <Item>
-              성이 3개면 삼성
+              재혁이형 요즘 굴이 재철이라는데? 얼굴
               <IconButton color='primary' onClick={handleChangeBookmark}>
                 {isBookmark ? <StarIcon /> : <StarBorderIcon />}
               </IconButton>
@@ -144,7 +144,7 @@ function Company() {
           </Grid>
           <Grid xs={6}>
             <Item>
-              최씨가 한명이면 최 한
+              재원이형에겐 벽이 느껴저 완
               <IconButton color='primary' onClick={handleChangeBookmark}>
                 {isBookmark ? <StarIcon /> : <StarBorderIcon />}
               </IconButton>
@@ -152,7 +152,7 @@ function Company() {
           </Grid>
           <Grid xs={6}>
             <Item>
-              파이어피닉스는 불사조
+              주싱이 넌 왜 맨날 같은 티만 입냐 프리티
               <IconButton color='primary' onClick={handleChangeBookmark}>
                 {isBookmark ? <StarIcon /> : <StarBorderIcon />}
               </IconButton>
@@ -160,7 +160,7 @@ function Company() {
           </Grid>
           <Grid xs={6}>
             <Item>
-              고진감래를 이어 조진감래
+              그쪽은 사슴이네요 내 맘을 녹용
               <IconButton color='primary' onClick={handleChangeBookmark}>
                 {isBookmark ? <StarIcon /> : <StarBorderIcon />}
               </IconButton>
@@ -168,7 +168,7 @@ function Company() {
           </Grid>
           <Grid xs={6}>
             <Item>
-              현정이 피곤해는 현피
+              네 미모는 비행기 같네, 타고 남
               <IconButton color='primary' onClick={handleChangeBookmark}>
                 {isBookmark ? <StarIcon /> : <StarBorderIcon />}
               </IconButton>
