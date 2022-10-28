@@ -22,14 +22,7 @@ IT 산업의 성장으로, IT 인재에 대한 **수요는 천정부지**로 치
 
 ## MTVS Inner Project Phoenix
 
-테스트 해보고 싶어요.
-
 <br>
 
 All rights reserved.
 
-test재혁
-
-test영우
-
-test재혁
